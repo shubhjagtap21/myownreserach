@@ -1,0 +1,209 @@
+﻿@model MyApp.Entity.EntityAddResearch
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/images/assets/images/mynetwork.ico">
+    <title>View Records</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+<body>
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-body">
+                    @using (Html.BeginForm())
+                    {
+                    <div class="title_details">
+                        <div class="flex-g">
+                            <div class="col-6">
+                                @Html.HiddenFor(model => model.strResId)
+                                <label for="fname">First Name</label>
+                                @Html.TextBoxFor(model => model.strFirstName, new { @class = "form-control", @disabled="disabled" })
+                                @*<input type="text" name="firstName" id="firstName" class="form-control" placeholder="Person’s First Name">*@
+                            </div>
+                            <div class="col-6">
+                                <label for="lname">Last Name</label>
+                                @Html.TextBoxFor(model => model.strLastName, new { @class = "form-control", @disabled = "disabled" })
+                            </div>
+                        </div>
+                        <div>
+                            <label for="title">Title Email</label>
+                            @Html.TextBoxFor(model => model.strTitleEmail, new { @class = "form-control", @disabled = "disabled" })
+                        </div>
+                        <div>
+                            <label for="purl">Persons Linkedin URL</label>
+                            @Html.TextBoxFor(model => model.strPersonlkdnURL, new { @class = "form-control", @disabled = "disabled" })
+                        </div>
+                        <div>
+                            <label for="curl">Company Website</label>
+                            @Html.TextBoxFor(model => model.strCompanyWebsite, new { @class = "form-control", @disabled = "disabled" })
+                        </div>
+                        <div class="flex-g">
+                            <div class="col-6">
+                                <label for="phone">Corporate Phone</label>
+                                @Html.TextBoxFor(model => model.strCorporatePn, new { @class = "form-control", @disabled = "disabled" })
+                            </div>
+                            <div class="col-6">
+                                <label for="emp">Employees</label>
+                                @Html.TextBoxFor(model => model.strEmployee, new { @class = "form-control", @disabled = "disabled" })
+                            </div>
+                        </div>
+                        <div class="flex-g">
+                            <div class="col-6">
+                                <label for="Industry">Industry</label>
+                                @Html.TextBoxFor(model => model.strIndustry, new { @class = "form-control", @disabled = "disabled" })
+                            </div>
+                            <div class="col-6">
+                                <label for="country">Company Country</label>
+                                @*@Html.DropDownList("Country", (IEnumerable<SelectListItem>)ViewBag.Countrys, "-----Select Country-----", new { @class = "form-control" })*@
+                                @Html.TextBoxFor(model => model.strCountryName, new { @class = "form-control", @disabled = "disabled" })
+                            </div>
+                        </div>
+                        <div class="flex-g">
+                            <div class="col-6">
+                                <label for="fname">Company State</label>
+                                @*<select id="State" class="form-control">-----Select-----</select>*@
+                                @Html.TextBoxFor(model => model.strStateName, new { @class = "form-control", @disabled = "disabled" })
+                            </div>
+                            <div class="col-6">
+                                <label for="lname">Company City</label>
+                                @*<select id="Citys" class="form-control">-----Select-----</select>*@
+                                @Html.TextBoxFor(model => model.strCityName, new { @class = "form-control", @disabled = "disabled" })
+                            </div>
+                        </div>
+                        <div>
+                            <label for="comapany">Company Address</label>
+                            @Html.TextBoxFor(model => model.strCompanyAddress, new { @class = "form-control", @disabled = "disabled" })
+                        </div>
+
+                        <div>
+                            <label for="url">Company URL</label>
+                            @Html.TextBoxFor(model => model.strCompanyURL, new { @class = "form-control", @disabled = "disabled" })
+                        </div>
+                        <div>
+                            <label for="private" class="form-label">Private Notes</label>
+                            @Html.TextAreaFor(model => model.strPrivateNote, new { @class = "form-control", @disabled = "disabled" })
+                            <input type="file" xmlns="http://www.w3.org/2000/svg" id="fileUpload" width="16" height="16" fill="currentColor" name="fileUpload" />
+                            @*<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             class="bi bi-paperclip" viewBox="0 0 16 16">
+            <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
+        </svg><span>Attach File</span>*@
+
+
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-5 col-sm-12 pb-2">
+                                    <label for="manage_catergories">Choose/Manage Categories</label>
+                                </div>
+                                <div class="col-lg-7 col-sm-12 row m-0">
+                                    <button type="submit" class="btn btn-priam active col-lg-6 col-sm-12">
+                                        Add Parent
+                                        category
+                                    </button>
+                                    <button type="submit" class="btn btn-priam active col-lg-6 col-sm-12">
+                                        Add Sub
+                                        category
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="manage_cat">
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed">
+                                                <span>
+                                                    <input class="form-check-input check-manage" type="checkbox"
+                                                           value=""> Parent Test 1 (1)
+                                                </span>
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                 height="24" fill="currentColor"
+                                                                 class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                                                <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z" />
+                                                            </svg>
+                                                            Food Eco System HR
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                 height="24" fill="currentColor"
+                                                                 class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                                                <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z" />
+                                                            </svg>
+                                                            Food Eco System chain
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header d-flex flex-row" id="flush-headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                                    aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                <span>
+                                                    <input class="form-check-input check-manage" type="checkbox"
+                                                           value="">
+                                                    Parent Test 2 (0)
+                                                </span>
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                             aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                 height="24" fill="currentColor"
+                                                                 class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                                                <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z" />
+                                                            </svg>
+                                                            Food Eco System HR
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                 height="24" fill="currentColor"
+                                                                 class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                                                <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z" />
+                                                            </svg>
+                                                            Food Eco System chain
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+</body>
+</html>

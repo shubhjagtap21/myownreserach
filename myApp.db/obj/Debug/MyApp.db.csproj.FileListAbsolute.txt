@@ -1,0 +1,349 @@
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.pdb
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.pdb
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.pdb
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.dll
+F:\MVC Projects\#OfficeProjects\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.pdb
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.pdb
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\PayPal.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\PayPal.xml
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.dll
+F:\yourflow\Dicas decast\DiecastDecals_07_05_2021\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\PayPal.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\MyApp.Entity.pdb
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\PayPal.xml
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Security.Permissions.xml
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Diecast Zone CC\DiecastDecals\MyApp.db\obj\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\MyApp.Entity.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\PayPal.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Security.Permissions.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\MyApp.Entity.pdb
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\PayPal.xml
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Security.Permissions.xml
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\obj\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#LeafyGreen\ASP\LeafyGreen\MyApp.db\obj\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.Entity.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\PayPal.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Permissions.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.Entity.pdb
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\PayPal.xml
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Permissions.xml
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Doctor'fs Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.Entity.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\PayPal.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Permissions.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\MyApp.Entity.pdb
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\PayPal.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Permissions.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.pdb
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\MyApp.db.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\MyApp.db.pdb
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\PayPal.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Permissions.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\PayPal.xml
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.dll
+F:\yourflow\doctors gift\DoctorsGifts\MyApp.db\obj\Debug\MyApp.db.pdb
+F:\Work\doctorsgift\MyApp.db\bin\Debug\MyApp.db.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\MyApp.db.pdb
+F:\Work\doctorsgift\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\PayPal.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Security.Permissions.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+F:\Work\doctorsgift\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\Work\doctorsgift\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+F:\Work\doctorsgift\MyApp.db\bin\Debug\PayPal.xml
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\Work\doctorsgift\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\Work\doctorsgift\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+F:\Work\doctorsgift\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\Work\doctorsgift\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\Work\doctorsgift\MyApp.db\obj\Debug\MyApp.db.dll
+F:\Work\doctorsgift\MyApp.db\obj\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\MyApp.db.pdb
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\MyApp.Entity.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\PayPal.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Security.Permissions.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\MyApp.Entity.pdb
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\PayPal.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Security.Permissions.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\obj\Debug\MyApp.db.dll
+E:\Office Project\###MVC\#Doctor's Gift\MVC\doctor.git\MyApp.db\obj\Debug\MyApp.db.pdb
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\MyApp.db.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\MyApp.db.pdb
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\MyApp.Entity.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\PayPal.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Security.Permissions.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\MyApp.Entity.pdb
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\PayPal.xml
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Security.Permissions.xml
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\obj\Debug\MyApp.db.csprojAssemblyReference.cache
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\obj\Debug\MyApp.db.dll
+C:\Work Files\doctors gift\Doctorsgift 26.02.22\MyApp.db\obj\Debug\MyApp.db.pdb
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\MyApp.db.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\MyApp.db.pdb
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\PayPal.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Security.Permissions.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\PayPal.xml
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\obj\Debug\MyApp.db.dll
+F:\Work\CoronaVirusSolution-2.0.git\MyApp.db\obj\Debug\MyApp.db.pdb
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\MyApp.db.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\MyApp.db.pdb
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\MyApp.Entity.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\PayPal.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Security.Permissions.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\MyApp.Entity.pdb
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\PayPal.xml
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Security.Permissions.xml
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\obj\Debug\MyApp.db.dll
+C:\YourFlowProject\CoronaVirusSolution\MyApp.db\obj\Debug\MyApp.db.pdb
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\MyApp.db.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\MyApp.db.pdb
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\MyApp.Entity.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\PayPal.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Permissions.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\MyApp.Entity.pdb
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\PayPal.xml
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Permissions.xml
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.dll
+C:\YourFlowProject\CoronaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.pdb
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\MyApp.db.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\MyApp.db.pdb
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\Newtonsoft.Json.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\PayPal.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Security.AccessControl.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Permissions.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Principal.Windows.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\PayPal.xml
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.dll
+F:\Your Flow\MyOwnResearch\CorornaVirusSolution\net\MyApp.db\obj\Debug\MyApp.db.pdb
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\MyOwnResearch.dll
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\MyOwnResearch.pdb
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\PayPal.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Web.Helpers.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Web.Mvc.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Web.Razor.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Web.WebPages.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\obj\Debug\MyOwnResearch.dll
+F:\Your Flow\MyOwnResearch\MyOwnResearch\MyOwnResearch\MyApp.db\obj\Debug\MyOwnResearch.pdb
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\MyOwnResearch.dll
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\MyOwnResearch.pdb
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\Newtonsoft.Json.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\PayPal.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Configuration.ConfigurationManager.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Security.AccessControl.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Security.Permissions.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Security.Principal.Windows.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Web.Helpers.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Web.Mvc.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Web.Razor.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Web.WebPages.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyOwnResearch.dll
+F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyOwnResearch.pdb

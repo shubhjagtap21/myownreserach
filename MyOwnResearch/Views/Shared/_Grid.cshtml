@@ -1,0 +1,64 @@
+﻿@model MyApp.Entity.EntityAddResearch
+    <div class="col-lg-3 col-sm-4" id="getData">
+        <div class="card">
+            <img src="~/images/assets/images/dash_img.png" class="card-img-top" alt="img">
+            <div class="card-body profile_card">
+                <img src="~/images/assets/images/profile_icon.jpg" height="40" alt="img">
+                <div class="content">
+                    <small><b id="resId">Research No: @Html.DisplayFor(a => a.strResId) </b></small>
+                </div>
+                <small><b>Shared By: @Html.DisplayFor(a => a.strFirstName)</b></small><br />
+                <small><b>Date: @Html.DisplayFor(a => a.showDate)</b> </small>
+
+
+                <h6>Excepteur sint occaecat. </h6>
+                <small class="card-text">
+                    @Html.DisplayFor(a => a.strPrivateNote)
+                </small>
+                <br>
+                <small>Category: @Html.DisplayFor(a => a.strIndustry)</small>
+                <div class="content ">
+                    <div>
+                        <a href="/dashboard/viewRecords/@Model.strResId">
+                        @*<a onclick="ShowDetails(@Model.strResId)" id="btnView">*@
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.921" height="21.76"
+                                 viewBox="0 0 29.921 21.76">
+                                <path id="Icon_awesome-readme" data-name="Icon awesome-readme"
+                                      d="M27.443,3.27H20.181a5.341,5.341,0,0,0-5.215,4.171A5.345,5.345,0,0,0,9.75,3.27H2.493A2.494,2.494,0,0,0,0,5.763V18.531a2.494,2.494,0,0,0,2.493,2.493h4.66c5.309,0,6.893,1.267,7.652,3.9a.166.166,0,0,0,.312,0c.764-2.628,2.348-3.9,7.652-3.9h4.66a2.494,2.494,0,0,0,2.493-2.493V5.768a2.5,2.5,0,0,0-2.478-2.5ZM12.571,17.056a.181.181,0,0,1-.182.182H4.062a.181.181,0,0,1-.182-.182v-1.19a.181.181,0,0,1,.182-.182h8.332a.181.181,0,0,1,.182.182v1.19Zm0-3.164a.181.181,0,0,1-.182.182H4.062a.181.181,0,0,1-.182-.182V12.7a.181.181,0,0,1,.182-.182h8.332a.181.181,0,0,1,.182.182v1.19Zm0-3.164a.181.181,0,0,1-.182.182H4.062a.181.181,0,0,1-.182-.182V9.539a.181.181,0,0,1,.182-.182h8.332a.181.181,0,0,1,.182.182v1.19Zm13.47,6.322a.181.181,0,0,1-.182.182H17.532a.181.181,0,0,1-.182-.182v-1.19a.181.181,0,0,1,.182-.182h8.332a.181.181,0,0,1,.182.182v1.19Zm0-3.164a.181.181,0,0,1-.182.182H17.532a.181.181,0,0,1-.182-.182V12.7a.181.181,0,0,1,.182-.182h8.332a.181.181,0,0,1,.182.182v1.19Zm0-3.164a.181.181,0,0,1-.182.182H17.532a.181.181,0,0,1-.182-.182V9.539a.181.181,0,0,1,.182-.182h8.332a.181.181,0,0,1,.182.182v1.184Z"
+                                      transform="translate(0 -3.27)" fill="#2d3c59" />
+                            </svg>
+                        </a>
+                        <a data-bs-toggle="modal" data-bs-target="#share_modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.207" height="21.951"
+                                 viewBox="0 0 19.207 21.951">
+                                <path id="Icon_awesome-share-alt" data-name="Icon awesome-share-alt"
+                                      d="M15.092,13.72a4.1,4.1,0,0,0-2.563.9L8.134,11.869a4.139,4.139,0,0,0,0-1.787l4.394-2.746a4.108,4.108,0,1,0-1.455-2.326L6.679,7.756a4.116,4.116,0,1,0,0,6.44l4.394,2.746a4.116,4.116,0,1,0,4.018-3.222Z"
+                                      fill="#2d3c59" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/dashboard/updateRecords/@Model.strResId">
+                        @*<a onclick="ShowForUpdate(@Model.strResId)" id="btnUpdate">*@
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24.485" height="21.76"
+                             viewBox="0 0 24.485 21.76">
+                            <path id="Icon_awesome-edit" data-name="Icon awesome-edit"
+                                  d="M17.114,3.539l3.834,3.834a.416.416,0,0,1,0,.587l-9.284,9.284-3.945.438a.827.827,0,0,1-.914-.914l.438-3.945,9.284-9.284A.416.416,0,0,1,17.114,3.539ZM24,2.566,21.926.492a1.663,1.663,0,0,0-2.346,0L18.075,2a.416.416,0,0,0,0,.587l3.834,3.834a.416.416,0,0,0,.587,0l1.5-1.5a1.663,1.663,0,0,0,0-2.346ZM16.323,14.719v4.327H2.721V5.444h9.768A.523.523,0,0,0,12.85,5.3l1.7-1.7a.51.51,0,0,0-.361-.871H2.04A2.041,2.041,0,0,0,0,4.764V19.727a2.041,2.041,0,0,0,2.04,2.04H17a2.041,2.041,0,0,0,2.04-2.04V13.019a.511.511,0,0,0-.871-.361l-1.7,1.7A.523.523,0,0,0,16.323,14.719Z"
+                                  transform="translate(0 -0.007)" fill="#2d3c59" />
+                        </svg>
+                        </a>
+
+                        <a onclick="btndelete(@Model.strResId)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.514" height="19.947"
+                                 viewBox="0 0 15.514 19.947">
+                                <path id="Icon_material-delete" data-name="Icon material-delete"
+                                      d="M8.608,22.231a2.223,2.223,0,0,0,2.216,2.216H19.69a2.223,2.223,0,0,0,2.216-2.216V8.933H8.608ZM23.014,5.608H19.136L18.028,4.5H12.487L11.379,5.608H7.5V7.825H23.014Z"
+                                      transform="translate(-7.5 -4.5)" fill="#2d3c59" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
