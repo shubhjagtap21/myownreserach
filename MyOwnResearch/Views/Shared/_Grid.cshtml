@@ -8,8 +8,11 @@
                 <div class="content">
                     <small><b id="resId">Research No: @Html.DisplayFor(a => a.strResId) </b></small>
                 </div>
-                <small><b>Shared status: @Html.DisplayFor(a => a.strFirstName)</b></small><br />
-                <small><b>Shared By: @Html.DisplayFor(a => a.strFirstName)</b></small><br />
+                
+                <small><b>Shared status: @Html.DisplayFor(a => a.strFirstName)</b></small>
+                <br />
+                <small><b>Shared By: @Html.DisplayFor(a => a.strFirstName)</b></small>
+                <br />
                 <small><b>Date: @Html.DisplayFor(a => a.showDate)</b> </small>
 
 
@@ -38,11 +41,9 @@
                                       fill="#2d3c59" />
                             </svg>
                         </a>
-                        @if (TempData["shareStatus"] != null)
+                        @if (@Model.shareStatus == 1)
                         {
-                            <div class="alert alert-success">
-                                <strong>@TempData["verify"]</strong>
-                            </div>
+                            <img src="~/images/assets/images/SharedBy.png" alt="Shared"  width="25" height="25" />
                         }
                     </div>
                     <div>
@@ -66,7 +67,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+</div>
         </div>
 
     </div>

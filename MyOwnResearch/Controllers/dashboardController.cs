@@ -300,7 +300,7 @@ namespace MyOwnResearch.Controllers
                 {
                     lstres.Add(new EntityAddResearch
                     {
-                        //shareStatus = Convert.ToInt32(tv["shareStatus"]),
+                        shareStatus = Convert.ToInt32(tv["shareStatus"]),
                         strResId = Convert.ToString(tv["resId"]),
                         strFirstName = Convert.ToString(tv["firstName"]),
                         strLastName = Convert.ToString(tv["lastName"]),

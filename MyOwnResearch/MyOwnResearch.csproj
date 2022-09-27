@@ -1053,6 +1053,7 @@
     <Content Include="images\assets\images\mynetwork.svg" />
     <Content Include="images\assets\images\profile_icon.jpg" />
     <Content Include="images\assets\images\Shared.png" />
+    <Content Include="images\assets\images\SharedBy.png" />
     <Content Include="images\assets\images\tweet.svg" />
     <Content Include="images\assets\images\whats.svg" />
     <Content Include="images\assets\images\zocial-email.svg" />

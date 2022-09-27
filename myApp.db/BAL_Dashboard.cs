@@ -21,8 +21,8 @@ namespace MyOwnResearch
                 entity.strFirstName = "";
             }
             comm.Parameters.AddWithValue("@firstName", entity.strFirstName);
-            comm.Parameters.AddWithValue("@Status", entity.status = "1");
-            comm.Parameters.AddWithValue("@shareStatus", entity.shareStatus="0");
+            comm.Parameters.AddWithValue("@Status", entity.status = 1);
+            comm.Parameters.AddWithValue("@shareStatus", entity.shareStatus=0);
             if (entity.strLastName == "")
             {
                 entity.strLastName = "";

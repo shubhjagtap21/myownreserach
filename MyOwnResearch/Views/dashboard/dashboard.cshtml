@@ -854,7 +854,7 @@
                         </div>
                         <div>
                             <label for="private" class="form-label">Private Notes</label>
-                            <textarea class="form-control" id="privateNotes" name="privateNotes" rows="3"></textarea>
+                            <textarea class="form-control" id="privateNotess" name="privateNote" rows="3"></textarea>
                             <input type="file" xmlns="http://www.w3.org/2000/svg" id="fileUpload" width="16" height="16" fill="currentColor" name="fileUpload" />
                             @*<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -1041,7 +1041,7 @@
                         $("#Citys").val(data.strCityName);
                         $("#companyURL").val(data.strCompanyURL);
                         $("#companyAdd").val(data.strCompanyAddress);
-                        $("#privateNotes").val(data.strPrivateNote);
+                        $("#privateNotess").val(data.strPrivateNote);
                         $("#fileUpload").val(data.fileUpload);
                     }
                 },
@@ -1168,7 +1168,7 @@
             var CityId = $('#Citys').val();
             var companyURL = $('#companyURL').val();
             var companyAdd = $('#companyAdd').val();
-            var privateNotes = $('#privateNotes').val();
+            var privateNotess = $('#privateNotess').val();
             var fileUpload = $('#fileUpload').get(0);
             var files = fileUpload.files;
             var fileData = new FormData();
@@ -1191,7 +1191,7 @@
             fileData.append("intCityId", CityId);
             fileData.append("strCompanyAddress", companyAdd);
             fileData.append("strCompanyURL", companyURL);
-            fileData.append("strPrivateNote", privateNotes);
+            fileData.append("strPrivateNote", privateNotess);
 
             $.ajax({
                 url: "/dashboard/addReserach",
