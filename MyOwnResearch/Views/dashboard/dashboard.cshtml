@@ -1,7 +1,10 @@
-﻿@model IEnumerable<MyApp.Entity.EntityAddResearch>
+﻿@model IPagedList<MyApp.Entity.EntityAddResearch>
+@*@model IEnumerable<MyApp.Entity.EntityAddResearch>*@
 <!DOCTYPE html>
 <html lang="en">
 
+@using PagedList.Mvc;
+@using PagedList;
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +19,34 @@
 </head>
 
 <body class="bg-prim">
+    <style>
+        .ul.pagination {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.pagination li {
+            display: inline;
+        }
+
+            ul.pagination li a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+                transition: background-color .3s;
+            }
+
+                ul.pagination li a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+                ul.pagination li a:hover:not(.active) {
+                    background-color: #ddd;
+                }
+    </style>
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -353,13 +384,20 @@
                     {
                         <table class="table" id="tblResearch">
                             <section class="row dashboard_card_grid">
+
                                 @foreach (var item in Model)
                                 {
                                     @Html.Partial("_Grid", item)
                                 }
                             </section>
                         </table>
+
+                        @*@Html.PagedListPager(Model,i=> Url.Action("ShowDetails","dashboard", new {i}))*@
                     }
+                <div class="pagination" style="margin-left: 400px">
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount <br /><br />
+                    @Html.PagedListPager(Model, i => Url.Action("dashboard", "dashboard", new { i }))
+                </div>
             </div>
 
         </div>
@@ -411,17 +449,17 @@
                                 </a>
                             </figure>
                             @*<figure class="col-auto">
-                                <a href="#">
-                                    <img src="~/images/assets/images/copy_link.svg" class="figure-img" alt="link">
-                                    <figcaption class="figure-caption">Copy Link</figcaption>
-                                </a>
-                            </figure>
-                            <figure class="col-auto">
-                                <a href="#">
-                                    <img src="~/images/assets/images/zocial-email.svg" class="figure-img" alt="mail">
-                                    <figcaption class="figure-caption">E-Mail</figcaption>
-                                </a>
-                            </figure>*@
+                                    <a href="#">
+                                        <img src="~/images/assets/images/copy_link.svg" class="figure-img" alt="link">
+                                        <figcaption class="figure-caption">Copy Link</figcaption>
+                                    </a>
+                                </figure>
+                                <figure class="col-auto">
+                                    <a href="#">
+                                        <img src="~/images/assets/images/zocial-email.svg" class="figure-img" alt="mail">
+                                        <figcaption class="figure-caption">E-Mail</figcaption>
+                                    </a>
+                                </figure>*@
                         </div>
                     </div>
                 </div>
@@ -924,7 +962,7 @@
                             </div>
                         </div>
                         <div class="btn-end">
-                            <button type="submit" onclick="btnSave()" id="btnSave" class="btn btn-priam active col-3">Save</button>
+                            <button type="submit" onclick="btnSaveResearch()" id="btnSave" class="btn btn-priam active col-3">Save</button>
                         </div>
                     </div>
                 </div>
@@ -960,8 +998,7 @@
                 dataType: 'json',
                 data: { 'keyword': keyword },
                 type: 'get',
-                success: function (res)
-                {
+                success: function (res) {
                     alert(message);
                     message = "filter data succesfully";
                 },
@@ -971,8 +1008,7 @@
                 }
             });
         }
-        function showPopupforAdd()
-        {
+        function showPopupforAdd() {
             $("#btnView").click(function () {
                 $("#add_details").modal("show");
             });
@@ -1069,8 +1105,7 @@
             $("#privateNotes").attr("disabled", "disabled");
             $("#fileUpload").attr("disabled", "disabled");
         }
-        function btnSaveInvite()
-        {
+        function btnSaveInvite() {
             var title = $('#title').val();
             var research = $('#research').val();
             var researchURL = $('#researchURL').val();
@@ -1106,8 +1141,20 @@
                 }
             });
         }
-        function btnSaveResearch()
-        {
+        function btnShareStatus(id) {
+            $.ajax({
+                url: "/dashboard/shareStatus",
+                dataType: 'JSON',
+                data: { 'id': id },
+                type: "POST",
+                success: function (data) {
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+        function btnSaveResearch() {
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
             var titleEmail = $('#titleEmail').val();
@@ -1161,17 +1208,7 @@
                 }
             });
         }
-        function btnUpdateResearch()
-        {
-            if ($('#resId').val().toString() == "0") {
-                btnSaveResearch();
-            }
-            else {
-                btnUpdateResearch();
-            }
-        }
-        function btnUpdateResearch()
-        {
+        function btnUpdateResearch() {
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
             var titleEmail = $('#titleEmail').val();
@@ -1189,8 +1226,7 @@
             var fileUpload = $('#fileUpload').get(0);
             var files = fileUpload.files;
             var fileData = new FormData();
-            for (var i = 0; i < files.length; i++)
-            {
+            for (var i = 0; i < files.length; i++) {
                 fileData.append(files[i].name, files[i]);
             }
             fileData.append("strFirstName", firstName);

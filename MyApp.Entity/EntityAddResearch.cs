@@ -10,6 +10,8 @@ namespace MyApp.Entity
 {
     public class EntityAddResearch
     {
+        public string status { get; set; }
+        public string shareStatus { get; set; }
         public string strResId { get; set; }
         [DisplayName("Shared By:")]
         public string strFirstName { get; set; }

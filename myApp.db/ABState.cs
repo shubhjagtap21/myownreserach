@@ -179,6 +179,7 @@ namespace MyApp.db
             SqlConnection conn = new SqlConnection(ConnectionStrings);
             SqlCommand comm = new SqlCommand("SP_GetCity", conn);
             comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 120;
             comm.Parameters.AddWithValue("@StateId", StateId);
             SqlDataAdapter ad = new SqlDataAdapter(comm);
             DataSet ds = new DataSet();

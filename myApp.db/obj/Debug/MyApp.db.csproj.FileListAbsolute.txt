@@ -347,3 +347,12 @@ F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csp
 F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
 F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyOwnResearch.dll
 F:\Your Flow\MyOwnResearchSolution\MyOwnResearch\MyApp.db\obj\Debug\MyOwnResearch.pdb
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\bin\Debug\MyOwnResearch.dll
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\bin\Debug\MyOwnResearch.pdb
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\bin\Debug\MyApp.Entity.dll
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\bin\Debug\MyApp.Entity.pdb
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\obj\Debug\MyApp.db.csproj.AssemblyReference.cache
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\obj\Debug\MyApp.db.csproj.CoreCompileInputs.cache
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\obj\Debug\MyApp.db.csproj.CopyComplete
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\obj\Debug\MyOwnResearch.dll
+F:\Your Flow\MyOwnResearch\myownreserach\MyApp.db\obj\Debug\MyOwnResearch.pdb

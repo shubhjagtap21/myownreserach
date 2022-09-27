@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using MyApp.db;
 using MyApp.Entity;
 using Newtonsoft.Json;
+using PagedList.Mvc;
+using PagedList;
 
 namespace MyOwnResearch.Controllers
 {
@@ -184,14 +186,14 @@ namespace MyOwnResearch.Controllers
         }
         [HttpPost]
 
-        public JsonResult deleterecord(string strresid,string Keyword)
+        public JsonResult deleterecord(string strresid,string Keyword, int? i)
         {
             string mes = null;
             int result = dt.delete(Convert.ToInt32(strresid));
             if (result > 0)
             {
                 mes = "record deleted succesfully";
-                ShowDetails(Keyword);
+                ShowDetails(Keyword,i);
             }
             else
             {
@@ -210,6 +212,20 @@ namespace MyOwnResearch.Controllers
             Country_Bind();
             var entity = getElementById(id);
             return View(entity);
+        }
+        [HttpPost]
+        public ActionResult shareStatus(int id)
+        {
+            int result = dt.shareStatus(id);
+            if (result > 0)
+            {
+                TempData["shareStatus"] = "Status Updated";
+            }
+            else
+            {
+                Console.WriteLine("Something went Wrong");
+            }
+            return View();
         }
         public EntityAddResearch getElementById(int id)
         {
@@ -250,15 +266,22 @@ namespace MyOwnResearch.Controllers
             return entity;
         }
         [HttpGet]
-        public ActionResult dashboard(string keyword)
+        public ActionResult dashboard(string keyword, int? i)
         {
-            ShowDetails(keyword);
+            ShowDetails(keyword,i);
             Country_Bind();
             return View();
         }
 
-        public ActionResult ShowDetails(string keyword)
+        public ActionResult ShowDetails(string keyword, int? i)
+        
         {
+            int pageSize = 8;
+            int pageIndex = 1;
+            pageIndex = i.HasValue ? Convert.ToInt32(i) : 1;
+            IPagedList<EntityAddResearch> ent = null;
+            EntityAddResearch entity = new EntityAddResearch();
+            
             SqlConnection conn = new SqlConnection(ConnectionStrings);
             SqlCommand comm = new SqlCommand("SP_ShowReseach", conn);
             comm.CommandType = CommandType.StoredProcedure;
@@ -277,6 +300,7 @@ namespace MyOwnResearch.Controllers
                 {
                     lstres.Add(new EntityAddResearch
                     {
+                        //shareStatus = Convert.ToInt32(tv["shareStatus"]),
                         strResId = Convert.ToString(tv["resId"]),
                         strFirstName = Convert.ToString(tv["firstName"]),
                         strLastName = Convert.ToString(tv["lastName"]),
@@ -293,8 +317,9 @@ namespace MyOwnResearch.Controllers
                     });
                 }
             }
-
-            return View(lstres);
+            ent = lstres.ToPagedList(pageIndex, pageSize);
+            return View(ent);
+            //return View(lstres.ToList().ToPagedList(i ?? 1,8));
         }
 
         [HttpPost]

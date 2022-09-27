@@ -21,6 +21,8 @@ namespace MyOwnResearch
                 entity.strFirstName = "";
             }
             comm.Parameters.AddWithValue("@firstName", entity.strFirstName);
+            comm.Parameters.AddWithValue("@Status", entity.status = "1");
+            comm.Parameters.AddWithValue("@shareStatus", entity.shareStatus="0");
             if (entity.strLastName == "")
             {
                 entity.strLastName = "";
@@ -231,6 +233,26 @@ namespace MyOwnResearch
                     entity.showDate = Convert.ToDateTime(tv["createdDate"].ToString());
                 }
             }
+        }
+        public int shareStatus(int id)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            SqlCommand comm = new SqlCommand("Sp_ShareStatus", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@resId", id);
+            conn.Open();
+            int result = comm.ExecuteNonQuery();
+            conn.Close();
+            if (result > 0)
+            {
+                Console.WriteLine("Share Status Updated");
+            }
+            else
+            {
+                Console.WriteLine("Something went Wrong");
+
+            }
+            return result;
         }
     }
 }
