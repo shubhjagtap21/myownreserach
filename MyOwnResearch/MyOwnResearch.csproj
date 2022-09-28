@@ -270,6 +270,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\dashboardController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\myResearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1121,11 +1122,9 @@
     <Content Include="Views\PageNotFound\Index.cshtml" />
     <Content Include="Views\Login\addCategories.cshtml" />
     <Content Include="Views\Login\categories.cshtml" />
-    <Content Include="Views\Login\dashboard.cshtml" />
     <Content Include="Views\Login\leads.cshtml" />
     <Content Include="Views\Login\leadsList.cshtml" />
     <Content Include="Views\Login\login.cshtml" />
-    <Content Include="Views\Login\research.cshtml" />
     <Content Include="Views\Login\signUp.cshtml" />
     <Content Include="Views\Login\verifyEmail.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -1136,6 +1135,7 @@
     <Content Include="Views\Shared\_AddDetails.cshtml" />
     <Content Include="Views\dashboard\viewRecords.cshtml" />
     <Content Include="Views\dashboard\updateRecords.cshtml" />
+    <Content Include="Views\myResearch\research.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\roslyn\" />

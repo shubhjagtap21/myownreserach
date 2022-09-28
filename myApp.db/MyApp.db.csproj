@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="ABState.cs" />
     <Compile Include="BAL_Dashboard.cs" />
+    <Compile Include="BAL_MyResarch.cs" />
     <Compile Include="Encryption\Encrypted.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />

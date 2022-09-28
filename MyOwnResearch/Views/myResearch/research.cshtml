@@ -13,12 +13,52 @@
 </head>
 
 <body class="bg-prim">
+    <style>
+        .dropbtn {
+            color: white;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 10px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="nav flex-column">
                 <li class="nav-item logo">
-                    <a class="nav-link" aria-current="page" href="~/My_Own_Research/dashboard">
+                    <a class="nav-link" aria-current="page" href="~/dashboard/dashboard">
                         <svg id="Component_7_1" data-name="Component 7 – 1" xmlns="http://www.w3.org/2000/svg"
                              width="30" height="45" viewBox="0 0 42.325 65.388">
                             <path id="Path_1169" data-name="Path 1169"
@@ -34,7 +74,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="~/My_Own_Research/dashboard">
+                    <a class="nav-link" href="~/dashboard/dashboard">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                             <path id="Icon_material-dashboard" data-name="Icon material-dashboard"
                                   d="M4.5,15.611h8.889V4.5H4.5Zm0,8.889h8.889V17.833H4.5Zm11.111,0H24.5V13.389H15.611Zm0-20v6.667H24.5V4.5Z"
@@ -46,7 +86,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="~/My_Own_Research/reasearch">
+                    <a class="nav-link active" href="~/myResearch/reasearch">
                         <svg xmlns="http://www.w3.org/2000/svg" width="19.937" height="27.964"
                              viewBox="0 0 19.937 27.964">
                             <g id="ldkJyl.tif" transform="translate(524.937 -112.182)">
@@ -151,15 +191,18 @@
                                               d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
                                     </svg>
                                 </span><br>
-                                <span class="top_breadcum">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2D3C59"
-                                         class="bi bi-house-fill" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                                        <path fill-rule="evenodd"
-                                              d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-                                    </svg> My Research
-                                </span>
+                                       <span class="top_breadcum">
+                                           <a href="~/myResearch/research">
+                                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2D3C59"
+                                                    class="bi bi-house-fill" viewBox="0 0 16 16">
+                                                   <path fill-rule="evenodd"
+                                                         d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                                   <path fill-rule="evenodd"
+                                                         d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+
+                                               </svg>
+                                           </a>My Research
+                                       </span>
                             </div>
                             <div class="ms-4">
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -275,8 +318,15 @@
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
                                     </svg>
                                 </span>
-                                <img src="~/images/assets/images/profile_icon.png" alt="profile">
-
+                                <div class="dropdown">
+                                    <img src="~/images/assets/images/profile_icon.jpg" height="35" class="dropbtn" alt="profile">
+                                    <span>Emay Walter</span><i class="middle fa fa-angle-down"></i>
+                                    <div class="dropdown-content">
+                                        <a href="#">Profile</a>
+                                        <a href="#">Setting</a>
+                                        <a href="~/Login/Login">Logout</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -291,27 +341,27 @@
                                     <small><b>Shared By: Greg Gill</b></small>
                                     <small>Date: 19/03/2019</small>
                                 </div>
-                                <a href="#"><strong> Title: Excepteur sint occaecat.</strong></a>
+                                <strong> Title: Excepteur sint occaecat.</strong>
                                 <div class="content">
                                     <div class="col-6">
                                         <label for="Research" class="form-label">Research URL</label>
                                         <input type="text" class="form-control"
-                                               value="https://veridocglobal.com/errorpage.htm?aspxerrorpath=/food-safety-certificate-use-case-breakdown">
+                                               placeholder="https://veridocglobal.com/errorpage.htm?aspxerrorpath=/food-safety-certificate-use-case-breakdown">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">Linkedin Profile Link</label>
                                         <input type="text" class="form-control"
-                                               value="https://veridocglobal.com/errorpage.htm?aspxerrorpath=/food-safety-certificate-use-case-breakdown">
+                                               placeholder="https://veridocglobal.com/errorpage.htm?aspxerrorpath=/food-safety-certificate-use-case-breakdown">
                                     </div>
                                 </div>
                                 <div class="content">
                                     <div class="col-6">
-                                        <label for="Private" class="form-label">Private Notes</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <label for="Private" class="form-label" >Private Notes</label>
+                                        <textarea class="form-control" rows="3" placeholder="Private Notes"></textarea>
                                     </div>
                                     <div class="col-6">
-                                        <label for="Public" class="form-label">Public Notes</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <label for="Public" class="form-label" >Public Notes</label>
+                                        <textarea class="form-control" rows="3" placeholder="Public Notes"></textarea>
                                     </div>
                                 </div>
                                 <div class="content">
@@ -374,7 +424,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>*@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="~/Content/js/custom.js"></script>
 </body>
 
 </html>

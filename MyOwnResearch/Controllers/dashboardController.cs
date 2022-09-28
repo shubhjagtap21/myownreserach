@@ -121,13 +121,11 @@ namespace MyOwnResearch.Controllers
                 {
                     Console.WriteLine("something wrong");
                 }
-                //dashboard(Keyword);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            RedirectToAction("dashboard", "dashboard");
             return Json(new { print = mes });
         }
         [HttpPost]
