@@ -6,7 +6,8 @@
             <div class="card-body profile_card">
                 <img src="~/images/assets/images/profile_icon.jpg" height="40" alt="img">
                 <div class="content">
-                    <small><b id="resId">Research No: @Html.DisplayFor(a => a.strResId) </b></small>
+                    <small><b>Research No: @Html.DisplayFor(a => a.strResId) </b></small>
+                    
                 </div>
                 <br />
                 <small><b>Shared By: @Html.DisplayFor(a => a.strFirstName)</b></small>
@@ -41,8 +42,15 @@
                         </a>
                         @if (@Model.shareStatus == 1)
                         {
-                            <img src="~/images/assets/images/SharedBy.png" alt="Shared"  width="25" height="25" />
+                            <img src="~/images/assets/images/SharedBy.png" alt="Shared" width="25" height="25" />
                         }
+                    </div>
+                    
+                    <div>
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target=@("#file_modal" + Model.strResId)>
+                            @*<a href="/dashboard/updateFile/@Model.strResId">*@
+                            <img src="~/images/assets/images/fileUpdate.png" alt="fileUpdate" width="25" height="25" />
+                        </a>
                     </div>
                     <div>
                         <a href="/dashboard/updateRecords/@Model.strResId">
@@ -64,8 +72,32 @@
                             </svg>
                         </a>
                     </div>
+                    <!--File Update Modal-->
+                    <div class="modal fade" id=@("file_modal" + Model.strResId) tabindex="-1" aria-labelledby="filemodallabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-md">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="text-end">
+                                        <a href="#" data-bs-dismiss="modal" aria-label="Close">
+                                            <img src="~/images/assets/images/close_icon.svg"
+                                                 alt="close">
+                                        </a>
+                                    </div>
+                                    <div class="m-4">
+                                        <h6>File Update</h6>
+                                        <div class="btn-end">
+                                            <input type="file" id=@("fileUpdates" + Model.strResId) class="form-control">
+                                            <a onclick="btnFileUpdate(@Model.strResId)" class="btn btn-priam active">
+                                                Update
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-</div>
+            </div>
         </div>
 
     </div>

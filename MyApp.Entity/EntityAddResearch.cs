@@ -10,6 +10,8 @@ namespace MyApp.Entity
 {
     public class EntityAddResearch
     {
+        public string userName { get; set; }
+        public string userId { get; set; }
         public int status { get; set; }
         public int shareStatus { get; set; }
         public string strResId { get; set; }

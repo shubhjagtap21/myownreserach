@@ -143,6 +143,11 @@ namespace MyApp.db
             adapter.Fill(tb);
             if (tb.Rows.Count > 0)
             {
+                foreach (DataRow item in tb.Rows)
+                {
+                    login.userId = Convert.ToInt32(item["userId"]);
+                    login.name = Convert.ToString(item["name"]);
+                }
                 Result = 1;
             }
             else
@@ -156,6 +161,18 @@ namespace MyApp.db
             SqlConnection conn = new SqlConnection(ConnectionStrings);
             //get all country
             SqlCommand comm = new SqlCommand("SP_GetCountry", conn);
+            SqlDataAdapter ad = new SqlDataAdapter(comm);
+            DataSet ds = new DataSet();
+            ad.Fill(ds);
+            return ds;
+        }
+        public DataSet Country(string resId)
+        {
+            //get all state
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            SqlCommand comm = new SqlCommand("SP_BindCountry", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@resId", resId);
             SqlDataAdapter ad = new SqlDataAdapter(comm);
             DataSet ds = new DataSet();
             ad.Fill(ds);

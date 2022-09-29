@@ -79,7 +79,7 @@ namespace MyOwnResearch.Controllers
         [HttpPost]
         public JsonResult addReserach(string strFirstName, string strLastName, string strTitleEmail, string strPersonlkdnURL, string strCompanyWebsite,
             string strCorporatePn, string strEmployee,
-            string strIndustry, int intCountryId, int intStateId, int intCityId, string strCompanyAddress, string strCompanyURL, string strPrivateNote,string Keyword)
+            string strIndustry, int intCountryId, int intStateId, int intCityId, string strCompanyAddress, string strCompanyURL, string strPrivateNote)
         {
             string mes = null;
             string path = null;
@@ -94,8 +94,12 @@ namespace MyOwnResearch.Controllers
                     path = Path.Combine(Server.MapPath("~/UploadedFiles/"), fileName);
                     file.SaveAs(path);
                 }
+                string userId = Session["userId"].ToString();
+                string userName = Session["userName"].ToString();
                 EntityAddResearch entity = new EntityAddResearch
                 {
+                    userName=userName,
+                    userId=userId,
                     strFirstName = strFirstName,
                     strLastName = strLastName,
                     strTitleEmail = strTitleEmail,
@@ -112,6 +116,7 @@ namespace MyOwnResearch.Controllers
                     strPrivateNote = strPrivateNote,
                     fileUpload = path
                 };
+                
                 int result = dt.AddReserach(entity);
                 if (result > 0)
                 {
@@ -128,28 +133,30 @@ namespace MyOwnResearch.Controllers
             }
             return Json(new { print = mes });
         }
+
         [HttpPost]
-        public JsonResult updateReserach(string strFirstName, string strLastName, string strTitleEmail, string strPersonlkdnURL, string strCompanyWebsite,
+        public JsonResult updateReserach1(string resId, string firstName, string lastName, string strTitleEmail, string strPersonlkdnURL, string strCompanyWebsite,
             string strCorporatePn, string strEmployee,
-            string strIndustry, int intCountryId, int intStateId, int intCityId, string strCompanyAddress, string strCompanyURL, string strPrivateNote, string Keyword)
+            string strIndustry, int intCountryId, int intStateId, int intCityId, string strCompanyAddress, string strCompanyURL, string strPrivateNote
+)
         {
             string mes = null;
-            string path = null;
             try
             {
-                for (int i = 0; i < Request.Files.Count; i++)
-                {
-                    var file = Request.Files[i];
+                //for (int i = 0; i < Request.Files.Count; i++)
+                //{
+                //    var file = Request.Files[i];
 
-                    var fileName = Path.GetFileName(file.FileName);
+                //    var fileName = Path.GetFileName(file.FileName);
 
-                    path = Path.Combine(Server.MapPath("~/UploadedFiles/"), fileName);
-                    file.SaveAs(path);
-                }
+                //    path = Path.Combine(Server.MapPath("~/UploadedFiles/"), fileName);
+                //    file.SaveAs(path);
+                //}
                 EntityAddResearch entity = new EntityAddResearch
                 {
-                    strFirstName = strFirstName,
-                    strLastName = strLastName,
+                    strResId = resId,
+                    strFirstName = firstName,
+                    strLastName = lastName,
                     strTitleEmail = strTitleEmail,
                     strPersonlkdnURL = strPersonlkdnURL,
                     strCompanyWebsite = strCompanyWebsite,
@@ -162,9 +169,8 @@ namespace MyOwnResearch.Controllers
                     strCompanyAddress = strCompanyAddress,
                     strCompanyURL = strCompanyURL,
                     strPrivateNote = strPrivateNote,
-                    fileUpload = path
                 };
-                int result = dt.AddReserach(entity);
+                int result = dt.updateRecords(entity);
                 if (result > 0)
                 {
                     mes = "Data inserted succesful";
@@ -181,6 +187,46 @@ namespace MyOwnResearch.Controllers
             }
             RedirectToAction("dashboard", "dashboard");
             return Json(new { print = mes });
+        }
+        [HttpPost]
+
+        public JsonResult fileUpdate(string resId)
+        {
+            string mes = null;
+            string path = null;
+            try
+            {
+                for (int i = 0; i < Request.Files.Count; i++)
+                {
+                    var file = Request.Files[i];
+
+                    var fileName = Path.GetFileName(file.FileName);
+
+                    path = Path.Combine(Server.MapPath("~/UploadedFiles/"), fileName);
+                    file.SaveAs(path);
+                }
+                EntityAddResearch entity = new EntityAddResearch
+                {
+                    strResId=resId,
+                    fileUpload=path
+                };
+                int result = dt.fileUpdate(entity);
+                if (result > 0)
+                {
+                    mes = "File Updated succesfully";
+                }
+                else
+                {
+                    mes = "something went wrong";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return Json(new { print = mes });           
+            
         }
         [HttpPost]
 
@@ -241,6 +287,7 @@ namespace MyOwnResearch.Controllers
             {
                 foreach (DataRow tv in dr.Rows)
                 {
+                    entity.strResId = Convert.ToString(tv["resId"]);
                     entity.strFirstName = Convert.ToString(tv["firstName"]);
                     entity.strLastName = Convert.ToString(tv["lastName"]);
                     entity.strTitleEmail = Convert.ToString(tv["titleEmail"]);
@@ -259,18 +306,61 @@ namespace MyOwnResearch.Controllers
                     entity.strCompanyURL = Convert.ToString(tv["companyURL"]);
                     entity.strPrivateNote = Convert.ToString(tv["privateNote"]);
                     entity.showDate = Convert.ToDateTime(tv["createdDate"].ToString());
+                    Session["stateId"] = "";
+                    Session["cityId"] = "";
+                    Session["countryId"] = Convert.ToInt32(tv["countryId"].ToString());
+
+                    Session["stateId"] = Convert.ToInt32(tv["stateId"].ToString());
+                    Session["cityId"] = Convert.ToInt32(tv["cityId"].ToString());
                 }
             }
+            Country_Bind1(Session["countryId"].ToString());
+            State_Bind(Session["countryId"].ToString());
+            City_Bind(Session["stateId"].ToString());
+
             return entity;
         }
         [HttpGet]
         public ActionResult dashboard(string keyword, int? i)
         {
-            ShowDetails(keyword,i);
-            Country_Bind();
+            try
+            {
+                if (Session["name"] == null && Session["userId"] == null && Session["userName"] == null)
+                {
+                    return RedirectToAction("login", "login", new { Name = Session["name"].ToString() });
+                }
+                else
+                {
+                    ShowDetails(keyword, i);
+                    Country_Bind();
+                    Industry_Bind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return View();
-        }
 
+        }
+        public void UserDetails(EntitySignUp entity)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            SqlCommand comm = new SqlCommand("SP_ShowSignUpDetails", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter Ad = new SqlDataAdapter(comm);
+            DataTable dr = new DataTable();
+            Ad.Fill(dr);
+            if (dr != null && dr.Rows.Count > 0)
+            {
+                foreach (DataRow tv in dr.Rows)
+                {
+                    entity.userId = Convert.ToInt32(tv["userId"]);
+                    entity.name = Convert.ToString(tv["name"]);
+                    entity.email = Convert.ToString(tv["email"]);
+                }
+            }
+        }
         public ActionResult ShowDetails(string keyword, int? i)
         
         {
@@ -298,6 +388,7 @@ namespace MyOwnResearch.Controllers
                 {
                     lstres.Add(new EntityAddResearch
                     {
+                        userId = Convert.ToString(tv["userID"]),
                         shareStatus = Convert.ToInt32(tv["shareStatus"]),
                         strResId = Convert.ToString(tv["resId"]),
                         strFirstName = Convert.ToString(tv["firstName"]),
@@ -315,6 +406,7 @@ namespace MyOwnResearch.Controllers
                     });
                 }
             }
+            ViewBag.id= lstres[0].userId;
             ent = lstres.ToPagedList(pageIndex, pageSize);
             return View(ent);
             //return View(lstres.ToList().ToPagedList(i ?? 1,8));
@@ -340,18 +432,47 @@ namespace MyOwnResearch.Controllers
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                countryList.Add(new SelectListItem { Text = dr["CountryName"].ToString(), Value = dr["Id"].ToString() });
+                if (Session["countryId1"] != null)
+                {
+                    countryList.Add(new SelectListItem { Text = dr["CountryName"].ToString(), Value = dr["Id"].ToString(), Selected = dr["Id"].ToString() == Session["countryId"].ToString() ? true : false });
+                }
+                else
+                {
+                    countryList.Add(new SelectListItem { Text = dr["CountryName"].ToString(), Value = dr["Id"].ToString() });
+                }
             }
             ViewBag.Countrys = countryList;
         }
+
+        public void Country_Bind1(string CountryId)
+        {
+            DataSet ds = dts.Get_Country();
+            List<SelectListItem> countryList = new List<SelectListItem>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                countryList.Add(new SelectListItem { Text = dr["CountryName"].ToString(), Value = dr["Id"].ToString(), Selected = dr["Id"].ToString() == Session["countryId"].ToString() ? true : false });
+            }
+            ViewBag.Countrys = countryList;
+        }
+
         public JsonResult State_Bind(string CountryId)
         {
             DataSet ds = dts.Get_State(CountryId);
             List<SelectListItem> stateList = new List<SelectListItem>();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                stateList.Add(new SelectListItem { Text = dr["stateName"].ToString(), Value = dr["Id"].ToString() });
+
+                if (Session["stateId"] != null)
+                {
+                    stateList.Add(new SelectListItem { Text = dr["stateName"].ToString(), Value = dr["Id"].ToString(), Selected = dr["Id"].ToString() == Session["stateId"].ToString() ? true : false });
+                }
+                else
+                {
+                    stateList.Add(new SelectListItem { Text = dr["stateName"].ToString(), Value = dr["Id"].ToString() });
+                }
             }
+            ViewBag.state1 = stateList;
             return Json(stateList, JsonRequestBehavior.AllowGet);
         }
         public JsonResult City_Bind(string StateId)
@@ -360,9 +481,39 @@ namespace MyOwnResearch.Controllers
             List<SelectListItem> cityList = new List<SelectListItem>();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                cityList.Add(new SelectListItem { Text = dr["CityName"].ToString(), Value = dr["Id"].ToString() });
+
+                if (Session["cityId"] != null)
+                {
+                    cityList.Add(new SelectListItem { Text = dr["CityName"].ToString(), Value = dr["Id"].ToString(), Selected = dr["Id"].ToString() == Session["cityId"].ToString() ? true : false });
+                }
+                else
+                {
+                    cityList.Add(new SelectListItem { Text = dr["CityName"].ToString(), Value = dr["Id"].ToString() });
+                }
             }
+            ViewBag.city = cityList;
             return Json(cityList, JsonRequestBehavior.AllowGet);
+        }
+        public void Industry_Bind()
+        {
+            DataSet ds = dt.Get_Industry();
+            List<SelectListItem> industryList = new List<SelectListItem>();
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                industryList.Add(new SelectListItem { Text = dr["industry"].ToString(), Value = dr["resId"].ToString() });
+            }
+            ViewBag.industrys = industryList;
+        }
+        public JsonResult Country(string resId)
+        {
+            DataSet ds = dts.Country(resId);
+            List<SelectListItem> stateList = new List<SelectListItem>();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                stateList.Add(new SelectListItem { Text = dr["CountryName"].ToString(), Value = dr["resId"].ToString() });
+            }
+            return Json(stateList, JsonRequestBehavior.AllowGet);
         }
     }
 }

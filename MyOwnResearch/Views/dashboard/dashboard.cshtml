@@ -35,7 +35,7 @@
             display: none;
             position: absolute;
             background-color: #f1f1f1;
-            min-width: 120px;
+            min-width: 100px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
@@ -58,6 +58,7 @@
         .dropdown:hover .dropbtn {
             background-color: #3e8e41;
         }
+
         .ul.pagination {
             display: inline-block;
             padding: 0;
@@ -332,15 +333,15 @@
                                 {
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="keyword" placeholder="search" />
-                                        <input class="btn btn-primary" type="submit" value="Search" />
+                                        <input class="btn btn-primary" onclick="Search()" type="submit" value="Search" />
                                     </div>
                                     @*<span class="input-group-text bg-prim">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                   fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                        fill="#fff" />
-              </svg>
-            </span>*@
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                                                    fill="#fff" />
+                                          </svg>
+                                        </span>*@
                                 }
 
 
@@ -351,11 +352,11 @@
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
                                     </svg>
                                 </span>
+                                <img src="~/images/assets/images/profile_icon.jpg" height="35" class="dropbtn" alt="profile">
                                 <div class="dropdown">
-                                    <img src="~/images/assets/images/profile_icon.jpg" height="35" class="dropbtn" alt="profile">
-                                    <span>Emay Walter</span><i class="middle fa fa-angle-down"></i>
+                                    <span>@Session["name"]</span><i class="middle fa fa-angle-down"></i>
                                     <div class="dropdown-content">
-                                        <a href="#">Profile</a>
+                                        <a href="~/Profile/Profiles/@ViewBag.id">Profile</a>
                                         <a href="#">Setting</a>
                                         <a href="~/Login/Login">Logout</a>
                                     </div>
@@ -370,48 +371,25 @@
                     <div class="row top_nav">
                         <div class="col-lg-3 col-md-4">
                             <div class="d-flex flex-row  align-items-center justify-content-around">
-                                <div class="col-4">
-                                    <label class="col-form-label">Categories</label>
+                                <div class="col-3">
+                                    <label class="col-form-label">Industry</label>
                                 </div>
                                 <div class="col-8">
-                                    <select name="Categories" class="form-control ">
-                                        <option value="1">All</option>
-                                        <option value="2">1</option>
-                                        <option value="3">2</option>
-                                        <option value="4">3</option>
-                                    </select>
+                                    @Html.DropDownList("industry", (IEnumerable<SelectListItem>)ViewBag.industrys, "-Select Industry-", new { @class = "form-control" })
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-4">
                             <div class="filter">
                                 <div class="col-4">
-                                    <label class="col-form-label">Sort By</label>
+                                    <label class="col-form-label">Country</label>
                                 </div>
                                 <div class="col-8">
-                                    <select name="Sort By" class="form-control ">
-                                        <option value="1">Newest</option>
-                                        <option value="2">1</option>
-                                        <option value="3">2</option>
-                                        <option value="4">3</option>
-                                    </select>
+                                    <select id="byCountry" class="form-control">-Select Country-</select>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-4">
-                            <div class="filter">
-                                <div class="col-4">
-                                    <label class="col-form-label text-nowrap">File Type</label>
-                                </div>
-                                <div class="col-8">
-                                    <select name="File" class="form-control ">
-                                        <option value="1">Select</option>
-                                        <option value="2">1</option>
-                                        <option value="3">2</option>
-                                        <option value="4">3</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-lg-3 col-md-12 text-end">
                             <button type="button" class="btn btn-priam active col-lg-5 col-md-3" data-bs-toggle="modal"
@@ -436,14 +414,13 @@
                                 }
                             </section>
                         </table>
-
                         @*@Html.PagedListPager(Model,i=> Url.Action("ShowDetails","dashboard", new {i}))*@
                     }
-                <div class="pagination" style="margin-left: 400px">
-                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount <br /><br />
-                    @Html.PagedListPager(Model, i => Url.Action("dashboard", "dashboard", new { i }))
-                </div>
-            </div>
+                    <div class="pagination" style="margin-left: 400px">
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount <br /><br />
+                        @Html.PagedListPager(Model, i => Url.Action("dashboard", "dashboard", new { i }))
+                    </div>
+</div>
 
         </div>
         <!-- /#page-content-wrapper -->
@@ -511,6 +488,7 @@
             </div>
         </div>
     </div>
+    
     <!--Invite Modal-->
     <div class="modal fade" id="invite_modal" tabindex="-1" aria-labelledby="sharemodallabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
@@ -869,7 +847,7 @@
                         <div class="flex-g">
                             <div class="col-6">
                                 <label for="Industry">Industry</label>
-                                <input type="text" class="form-control" id="industry" name="industry" placeholder="Enter Industry">
+                                <input type="text" class="form-control" id="industrys" name="industry" placeholder="Enter Industry">
                             </div>
                             <div class="col-6">
                                 <label for="country">Company Country</label>
@@ -1013,7 +991,7 @@
                 </div>
             </div>
         </div>
-    </div>`
+    </div>
     <!-- scripts    -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
@@ -1199,6 +1177,39 @@
                 }
             });
         }
+        function btnFileUpdate(strResId) {
+            debugger;
+            var fileUpdate = $('#fileUpdates' + strResId).get(0);
+            var files = fileUpdate.files;
+            var fileData = new FormData();
+            /*var filename ='',*/
+            for (var i = 0; i < files.length; i++) {
+                /*filename = files[i].name;*/
+                fileData.append(files[i].name, files[i]);
+            }
+            fileData.append("resId", strResId);
+            debugger;
+            if (confirm("Are you sure you want to Update File?")) {
+                $.ajax({
+                    url: "/dashboard/fileUpdate",
+                    dataType: 'JSON',
+                    contentType: false,
+                    processData: false,
+                    data: fileData,
+                    type: "POST",
+                    success: function (data) {
+                        alert(data.print);
+                        clear();
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            }
+            else {
+                alert('Button clicked by mistake');
+            }
+        }
         function btnSaveResearch() {
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
@@ -1207,7 +1218,7 @@
             var companyWebsite = $('#companyWebsite').val();
             var corporatePhone = $('#corporatePhone').val();
             var employees = $('#employees').val();
-            var industry = $('#industry').val();
+            var industry = $('#industrys').val();
             var CountryId = $('#Country').val();
             var StateId = $('#State').val();
             var CityId = $('#Citys').val();
@@ -1246,7 +1257,9 @@
                 data: fileData,
                 method: "POST",
                 success: function (data) {
+                    alert(data.print);
                     clear();
+
                 },
                 error: function (err) {
                     console.log(err);
@@ -1321,6 +1334,7 @@
             $('#companyAdd').val('');
             $('#privateNotes').val('');
             $('#fileUpload').val('');
+            $('#fileUpdate').val('');
             $('#title').val('');
             $('#research').val('');
             $('#researchURL').val('');
@@ -1331,6 +1345,7 @@
             $('#fileUpload2').get('');
 
         }
+
         function btndelete(researchId) {
 
             if (confirm("Are you sure you want to delete  this?")) {
@@ -1373,7 +1388,19 @@
                     $('#Citys').html(v);
                 });
             });
+            $('#industry').change(function () {
+                var id = $(this).val();
+                $('#byCountry').empty();
+                $.get("Country", { resId: id }, function (data) {
+                    var v = "<option>-Select Country-</option>";
+                    $.each(data, function (i, v1) {
+                        v += "<option value=" + v1.Value + ">" + v1.Text + "</option>";
+                    });
+                    $('#byCountry').html(v);
+                });
+            });
         });
+
 
     </script>
 </body>

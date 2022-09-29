@@ -271,6 +271,7 @@
     <Compile Include="Controllers\dashboardController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\myResearchController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1035,6 +1036,7 @@
     <Content Include="images\assets\images\dash_img.png" />
     <Content Include="images\assets\images\Ellipse 10.svg" />
     <Content Include="images\assets\images\fb.svg" />
+    <Content Include="images\assets\images\fileUpdate.png" />
     <Content Include="images\assets\images\Icon awesome-edit.svg" />
     <Content Include="images\assets\images\Icon awesome-readme.png" />
     <Content Include="images\assets\images\Icon awesome-readme.svg" />
@@ -1136,6 +1138,7 @@
     <Content Include="Views\dashboard\viewRecords.cshtml" />
     <Content Include="Views\dashboard\updateRecords.cshtml" />
     <Content Include="Views\myResearch\research.cshtml" />
+    <Content Include="Views\Profile\Profiles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\roslyn\" />

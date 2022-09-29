@@ -92,6 +92,7 @@ namespace LoginControllers
         [HttpGet]
         public ActionResult login()
         {
+            
             return View();
         }
         [HttpPost]
@@ -103,14 +104,20 @@ namespace LoginControllers
                 int Result = dt.Login(login);
                 if (Result>0)
                 {
-                    TempData["AlertLogin"] = "Login Succesfully";
-                    return RedirectToAction("dashboard","dashboard");
+                    Session["name"] = login.name;
+                    Session["userId"] = login.userId;
+                    Session["userName"] = login.strEmail;
+                    if (Session["name"] != null)
+                    {
+                        return RedirectToAction("dashboard", "dashboard", new { Name = Session["name"].ToString(), userId = Session["userId"], userName = Session["userName"] });
+                    }
+                    else
+                    {
+                        TempData["AlertMessages"] = "Please Enter Correct Username and Password";
+                        return RedirectToAction("login");
+                    }
                 }
-                else
-                {
-                    TempData["AlertMessages"] = "Please Enter Correct Username and Password";
-                    return RedirectToAction("login");
-                }
+                
             }
             catch(Exception ex)
             {

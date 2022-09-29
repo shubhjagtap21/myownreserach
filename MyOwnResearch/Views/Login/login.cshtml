@@ -1,4 +1,4 @@
-﻿@model MyApp.Entity.EntityLogin
+﻿@model MyApp.Entity.EntitySignUp
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -83,12 +83,12 @@
                     <div>
                         <label for="username" class="form-label">Email</label>
                         <input type="text" name="strEmail" class="form-control" placeholder="Enter Email" value="">
-                        @Html.ValidationMessageFor(model => model.strEmail, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(a => a.email, "", new { @class = "text-danger" })
                     </div>
                     <div>
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="strPassword" class="form-control" placeholder="Enter Password" value="">
-                        @Html.ValidationMessageFor(model => model.strPassword, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(a => a.password, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="login_submit">

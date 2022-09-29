@@ -21,6 +21,8 @@ namespace MyOwnResearch
                 entity.strFirstName = "";
             }
             comm.Parameters.AddWithValue("@firstName", entity.strFirstName);
+            comm.Parameters.AddWithValue("@userId", entity.userId);
+            comm.Parameters.AddWithValue("@userName", entity.userName);
             comm.Parameters.AddWithValue("@Status", entity.status = 1);
             comm.Parameters.AddWithValue("@shareStatus", entity.shareStatus=0);
             if (entity.strLastName == "")
@@ -102,7 +104,19 @@ namespace MyOwnResearch
                 conn.Close();
                 return result;
         }
-        
+        public int fileUpdate(EntityAddResearch entity)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            int i;
+            conn.Open();
+            SqlCommand com = new SqlCommand("SP_updateFile", conn);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@resId", entity.strResId);
+            com.Parameters.AddWithValue("@fileUpdate", entity.fileUpload);
+            i = com.ExecuteNonQuery();
+            conn.Close();
+            return i;
+        }
         public int delete(int strresid)
         {
             SqlConnection conn = new SqlConnection(ConnectionStrings);
@@ -136,7 +150,6 @@ namespace MyOwnResearch
             comm.Parameters.AddWithValue("@companyAddress", entity.strCompanyAddress);
             comm.Parameters.AddWithValue("@companyURL", entity.strCompanyURL);
             comm.Parameters.AddWithValue("@privateNote", entity.strPrivateNote);
-            comm.Parameters.AddWithValue("@fileUpload", entity.fileUpload);
             conn.Open();
             i = comm.ExecuteNonQuery();
             conn.Close();
@@ -253,6 +266,44 @@ namespace MyOwnResearch
 
             }
             return result;
+        }
+        public DataSet Get_Gender()
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            //get all country
+            SqlCommand comm = new SqlCommand("SP_getGender", conn);
+            SqlDataAdapter ad = new SqlDataAdapter(comm);
+            DataSet ds = new DataSet();
+            ad.Fill(ds);
+            return ds;
+        }
+        public DataSet Get_Industry()
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            //get all country
+            SqlCommand comm = new SqlCommand("SP_BindIndustry", conn);
+            SqlDataAdapter ad = new SqlDataAdapter(comm);
+            DataSet ds = new DataSet();
+            ad.Fill(ds);
+            return ds;
+        }
+        public int updateProfile(EntitySignUp entity)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            int i = 0;
+            SqlCommand comm = new SqlCommand("SP_UpdateProfile", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@userId", entity.userId);
+            comm.Parameters.AddWithValue("@firstName", entity.name);
+            comm.Parameters.AddWithValue("@lastName", entity.strLastName);
+            comm.Parameters.AddWithValue("@email", entity.email);
+            comm.Parameters.AddWithValue("@gender", entity.gender);
+            comm.Parameters.AddWithValue("@phoneNumber", entity.strPhoneNumber);
+            comm.Parameters.AddWithValue("@address", entity.strAddress);
+            conn.Open();
+            i = comm.ExecuteNonQuery();
+            conn.Close();
+            return i;
         }
     }
 }

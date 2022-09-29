@@ -14,5 +14,9 @@ namespace MyApp.Entity
         public string strEmail { get; set; }
         [Required(ErrorMessage = "Please Enter Password")]
         public string strPassword { get; set; }
+
+        public int userId { get; set; }
+        public string name { get; set; }
+
     }
 }
