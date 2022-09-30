@@ -20,6 +20,10 @@
 
 <body class="bg-prim">
     <style>
+        .required:after {
+            content: " *";
+            color: red;
+        }
         .dropbtn {
             color: white;
             font-size: 16px;
@@ -333,15 +337,15 @@
                                 {
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="keyword" placeholder="search" />
-                                        <input class="btn btn-primary" onclick="Search()" type="submit" value="Search" />
+                                        <input class="btn btn-primary"  type="submit" value="Search" />
                                     </div>
                                     @*<span class="input-group-text bg-prim">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                                                    fill="#fff" />
-                                          </svg>
-                                        </span>*@
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                        fill="#fff" />
+              </svg>
+            </span>*@
                                 }
 
 
@@ -352,9 +356,10 @@
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
                                     </svg>
                                 </span>
-                                <img src="~/images/assets/images/profile_icon.jpg" height="35" class="dropbtn" alt="profile">
+                                <span><img src="~/images/assets/images/profile_icon.jpg" height="35" class="dropbtn" alt="profile"></span>
                                 <div class="dropdown">
-                                    <span>@Session["name"]</span><i class="middle fa fa-angle-down"></i>
+
+                                    <span style="color:darkblue;font-size:14px;">@Session["name"]</span><i class="middle fa fa-angle-down"></i>
                                     <div class="dropdown-content">
                                         <a href="~/Profile/Profiles/@ViewBag.id">Profile</a>
                                         <a href="#">Setting</a>
@@ -368,58 +373,61 @@
                 <!--Main Section-->
                 <section class="container-fluid">
                     <!--filters-->
-                    <div class="row top_nav">
-                        <div class="col-lg-3 col-md-4">
-                            <div class="d-flex flex-row  align-items-center justify-content-around">
-                                <div class="col-3">
-                                    <label class="col-form-label">Industry</label>
-                                </div>
-                                <div class="col-8">
-                                    @Html.DropDownList("industry", (IEnumerable<SelectListItem>)ViewBag.industrys, "-Select Industry-", new { @class = "form-control" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="filter">
-                                <div class="col-4">
-                                    <label class="col-form-label">Country</label>
-                                </div>
-                                <div class="col-8">
-                                    <select id="byCountry" class="form-control">-Select Country-</select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4">
-                        </div>
-                        <div class="col-lg-3 col-md-12 text-end">
-                            <button type="button" class="btn btn-priam active col-lg-5 col-md-3" data-bs-toggle="modal"
-                                    data-bs-target="#invite_add">
-                                Invite
-                            </button>
-                            <button type="button" class="btn btn-priam active col-lg-5 col-md-3" onclick="enable()" data-bs-toggle="modal"
-                                    data-bs-target="#add_details">
-                                Add
-                            </button>
-                        </div>
-                    </div>
-                    <!--main section-->
-                    @using (Html.BeginForm())
+                    @using (Html.BeginForm("dashboard", "dashboard", FormMethod.Get))
                     {
-                        <table class="table" id="tblResearch">
-                            <section class="row dashboard_card_grid">
-
-                                @foreach (var item in Model)
-                                {
-                                    @Html.Partial("_Grid", item)
-                                }
-                            </section>
-                        </table>
-                        @*@Html.PagedListPager(Model,i=> Url.Action("ShowDetails","dashboard", new {i}))*@
+                        <div class="row top_nav">
+                            <div class="col-lg-3 col-md-4">
+                                <div class="d-flex flex-row  align-items-center justify-content-around">
+                                    <div class="col-3">
+                                        <label class="col-form-label">Industry</label>
+                                    </div>
+                                    <div class="col-8">
+                                        @Html.DropDownList("industry", (IEnumerable<SelectListItem>)ViewBag.industrys, "-Select Industry-", new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4">
+                                <div class="filter">
+                                    <div class="col-4">
+                                        <label class="col-form-label">Country</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <select id="byCountry" class="form-control">-Select Country-</select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4">
+                                <input class="btn btn-primary" type="submit" value="Search" />
+                            </div>
+                            <div class="col-lg-3 col-md-12 text-end">
+                                <button type="button" class="btn btn-priam active col-lg-5 col-md-3" data-bs-toggle="modal"
+                                        data-bs-target="#invite_add">
+                                    Invite
+                                </button>
+                                <button type="button" class="btn btn-priam active col-lg-5 col-md-3" data-bs-toggle="modal"
+                                        data-bs-target="#add_details">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
                     }
-                    <div class="pagination" style="margin-left: 400px">
-                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount <br /><br />
-                        @Html.PagedListPager(Model, i => Url.Action("dashboard", "dashboard", new { i }))
-                    </div>
+                        <!--main section-->
+                        @using (Html.BeginForm())
+                        {
+                            <table class="table" id="tblResearch">
+                                <section class="row dashboard_card_grid">
+                                    @foreach (var item in Model)
+                                    {
+                                        @Html.Partial("_Grid", item)
+                                    }
+                                </section>
+                            </table>
+                            @*@Html.PagedListPager(Model,i=> Url.Action("ShowDetails","dashboard", new {i}))*@
+                        }
+                        <div class="pagination" style="margin-left: 400px">
+                            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount <br /><br />
+                            @Html.PagedListPager(Model, i => Url.Action("dashboard", "dashboard", new { i }))
+                        </div>
 </div>
 
         </div>
@@ -488,7 +496,7 @@
             </div>
         </div>
     </div>
-    
+
     <!--Invite Modal-->
     <div class="modal fade" id="invite_modal" tabindex="-1" aria-labelledby="sharemodallabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
@@ -812,16 +820,16 @@
                         <div class="flex-g">
                             <div class="col-6">
                                 <input type="hidden" value="0" id="resId" />
-                                <label for="fname">First Name</label>
+                                <label for="fname" class="required">First Name</label>
                                 <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Person’s First Name">
                             </div>
                             <div class="col-6">
-                                <label for="lname">Last Name</label>
+                                <label for="lname" class="required">Last Name</label>
                                 <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Person’s Last Name">
                             </div>
                         </div>
                         <div>
-                            <label for="title">Title Email</label>
+                            <label for="title" class="required">Title Email</label>
                             <input type="text" name="titleEmail" id="titleEmail" class="form-control" placeholder="Email Here">
                         </div>
                         <div>
@@ -836,7 +844,7 @@
                         </div>
                         <div class="flex-g">
                             <div class="col-6">
-                                <label for="phone">Corporate Phone</label>
+                                <label for="phone" class="required">Corporate Phone</label>
                                 <input type="text" class="form-control" maxlength="10" name="phone" id="corporatePhone" placeholder="Enter Phone Number">
                             </div>
                             <div class="col-6">
@@ -846,21 +854,21 @@
                         </div>
                         <div class="flex-g">
                             <div class="col-6">
-                                <label for="Industry">Industry</label>
+                                <label for="Industry" class="required">Industry</label>
                                 <input type="text" class="form-control" id="industrys" name="industry" placeholder="Enter Industry">
                             </div>
                             <div class="col-6">
-                                <label for="country">Company Country</label>
+                                <label for="country" class="required">Company Country</label>
                                 @Html.DropDownList("Country", (IEnumerable<SelectListItem>)ViewBag.Countrys, "-----Select Country-----", new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="flex-g">
                             <div class="col-6">
-                                <label for="fname">Company State</label>
+                                <label for="fname" class="required">Company State</label>
                                 <select id="State" class="form-control">-----Select-----</select>
                             </div>
                             <div class="col-6">
-                                <label for="lname">Company City</label>
+                                <label for="lname" class="required">Company City</label>
                                 <select id="Citys" class="form-control">-----Select-----</select>
                             </div>
                         </div>
@@ -998,22 +1006,127 @@
         crossorigin="anonymous"></script>*@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
             crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="~/Content/js/custom.js"></script>
     <script src="~/script/jquery-1.7.1.min.js"></script>
     <script>
-        //$(document).ready(function () {
-        //    Search();
-        //});
-        $(function () {
-            $("#btnSave").click(function () {
+        $('#btnSave').click(function () {
+            var firstName = $('#firstName').val();
+            var lastName = $('#lastName').val();
+            var titleEmail = $('#titleEmail').val();
+            var corPhone = $('#corporatePhone').val();
+            var industry = $('#industrys').val();
+            var country = $('#Country').val();
+            var state = $('#State').val();
+            var city = $('#Citys').val();
+
+            //if (firstName == "" || lastName == "" || titleEmail == "" || corPhone == "" || industry == "" || country == "" || state == "" || city == "") {
+            //    swal({
+            //        title: "fields Empty !",
+            //        text: "Please Check Missing Fields!",
+            //        icon: "warning",
+            //        button: "OK",
+            //    });
+            //}
+            if (firstName == "") {
+                swal({
+                    title: "First Name Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (lastName == "" ) {
+                swal({
+                    title: "Last Name Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (titleEmail == "" ){
+                swal({
+                    title: "Email Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (corPhone == "") {
+                swal({
+                    title: "Phone Number Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (industry == "") {
+                swal({
+                    title: "Phone Number Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (country == "") {
+                swal({
+                    title: "Choose Country !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (state == "") {
+                swal({
+                    title: "Choose State !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (city == "") {
+                swal({
+                    title: "Choose City !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            
+            else {
+                swal({
+                    title: "Succesfully",
+                    text: "You Submit the Records!",
+                    icon: "success",
+                    button: "OK",
+                });
                 $("#add_details").modal("hide")
-            });
+            }
+
         });
         $(function () {
             $("#btnSaveInvite").click(function () {
                 $("#invite_add").modal("hide")
             });
         });
+        function SearchIndustry() {
+            var industry = $('#industry').val();
+            debugger;
+            $.ajax({
+                url: "/dashboard/ShowDetailsIndustry",
+                dataType: 'json',
+                data: { 'industry': industry },
+                type: 'get',
+                success: function (res) {
+                    alert(res.message);
+                    message = "filter data succesfully";
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                    alert(thrownError);
+                }
+            });
+        }
         function Search() {
             var keyword = $('#keyword').val();
             $.ajax({
@@ -1022,8 +1135,8 @@
                 data: { 'keyword': keyword },
                 type: 'get',
                 success: function (res) {
-                    alert(message);
                     message = "filter data succesfully";
+                    alert(res.message);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
 
@@ -1106,10 +1219,6 @@
                     console.log(err);
                 }
             });
-        }
-        function enable() {
-            $("firstName").removeAttr('disabled');
-            $("lastName").removeAttr('disabled');
         }
         function disable() {
             $("#firstName").attr("disabled", "disabled");
@@ -1257,9 +1366,7 @@
                 data: fileData,
                 method: "POST",
                 success: function (data) {
-                    alert(data.print);
                     clear();
-
                 },
                 error: function (err) {
                     console.log(err);
@@ -1345,25 +1452,35 @@
             $('#fileUpload2').get('');
 
         }
-
         function btndelete(researchId) {
 
-            if (confirm("Are you sure you want to delete  this?")) {
-                $.ajax({
-                    url: "/dashboard/deleterecord",
-                    dataType: 'JSON',
-                    data: { 'strresid': researchId },
-                    type: "POST",
-                    success: function (data) {
-                    },
-                    error: function (err) {
-                        console.log(err);
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            url: "/dashboard/deleterecord",
+                            dataType: 'JSON',
+                            data: { 'strresid': researchId },
+                            type: "POST",
+                            success: function (data) {
+                            },
+                            error: function (err) {
+                                console.log(err);
+                            }
+                        });
+                        swal("Poof! Your file has been deleted!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Your file is safe!");
                     }
                 });
-            }
-            else {
-                alert('Button clicked by mistake');
-            }
         }
         $(document).ready(function () {
             $('#Country').change(function () {

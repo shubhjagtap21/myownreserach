@@ -18,6 +18,12 @@
 </head>
 
 <body class="login_page">
+    <style>
+        .required:after {
+            content: " *";
+            color: red;
+        }
+    </style>
     <div class="row">
         <!--Left Section-->
         <div class="col-lg-7 col-md-12 login_bg">
@@ -50,7 +56,7 @@
                                         </a>
                                     </div>
                                     <div class="m-4">
-                                        <h6>FORGOT PASSWORD</h6>
+                                        <h6 class="required">FORGOT PASSWORD</h6>
                                         <input type="email" id="forEmail" class="form-control" placeholder="Enter Email">
                                         <div class="btn-end">
                                             <button type="button" class="btn btn-priam active" id="btnClosePopup" onclick="btnForgot()">Confirm</button>
@@ -81,18 +87,18 @@
                         </div>
                     }
                     <div>
-                        <label for="username" class="form-label">Email</label>
-                        <input type="text" name="strEmail" class="form-control" placeholder="Enter Email" value="">
+                        <label for="username" class="form-label required">Email</label>
+                        <input type="text" name="strEmail" class="form-control" id="email" placeholder="Enter Email" value="">
                         @Html.ValidationMessageFor(a => a.email, "", new { @class = "text-danger" })
                     </div>
                     <div>
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="strPassword" class="form-control" placeholder="Enter Password" value="">
+                        <label for="password" class="form-label required">Password</label>
+                        <input type="password" name="strPassword" class="form-control" id="password" placeholder="Enter Password" value="">
                         @Html.ValidationMessageFor(a => a.password, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="login_submit">
-                    <input type="submit" value="Login" class="btn btn-priam active col-3" />
+                    <input type="submit" value="Login" id="btnLogin" class="btn btn-priam active col-3" />
                     <a href="#" data-bs-toggle="modal" data-bs-target="#forgot_password">Forgot Password</a>
                     @*<input type="submit" value="Sign Up"/>*@
                     <a class="btn-send" href="~/Login/signUp">Sign Up</a>
@@ -105,29 +111,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     @*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" crossorigin="anonymous"></script>*@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
+    <script src="~/script/jquery-1.7.1.min.js"></script>
     <script>
-        $(function () {
-            $("#btnClosePopup").click(function () {
-                $("#forgot_password").modal("hide")
+        $('#btnLogin').click(function () {
+            var email = $('#email').val();
+            var password = $('#password').val();
+
+            if (email == "") {
+                swal({
+                    title: "Email Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (password == "") {
+                swal({
+                    title: "Email Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else {
+                swal({
+                    title: "Succesfully",
+                    text: "Succesfully Login!",
+                    icon: "success",
+                    button: "OK",
+                });
+            }
+            $(function () {
+                $("#btnClosePopup").click(function () {
+                    $("#forgot_password").modal("hide")
+                });
             });
-        });
-        function btnForgot() {
-            var forEmail = $('#forEmail').val();
-            $.ajax({
-                url: "/Login/forgotPass",
-                dataType: 'JSON',
-                data: { 'forEmail': forEmail },
-                method: "POST",
-                success: function (data) {
-                    $('#forEmail').val('');
-                    alert(data.pri);
-                },
-                error: function (err) {
-                    console.error(err);
-                }
-            })
-        }
+            function btnForgot() {
+                var forEmail = $('#forEmail').val();
+                $.ajax({
+                    url: "/Login/forgotPass",
+                    dataType: 'JSON',
+                    data: { 'forEmail': forEmail },
+                    method: "POST",
+                    success: function (data) {
+                        $('#forEmail').val('');
+                        alert(data.pri);
+                    },
+                    error: function (err) {
+                        console.error(err);
+                    }
+                })
+            }
     </script>
 
 </body>

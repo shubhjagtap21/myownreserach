@@ -321,7 +321,7 @@ namespace MyOwnResearch.Controllers
             return entity;
         }
         [HttpGet]
-        public ActionResult dashboard(string keyword, int? i)
+        public ActionResult dashboard(string keyword, int? i, string industry,string byCountry)
         {
             try
             {
@@ -331,7 +331,18 @@ namespace MyOwnResearch.Controllers
                 }
                 else
                 {
-                    ShowDetails(keyword, i);
+                    if (keyword != null)
+                    {
+                        ShowDetails(keyword, i);
+                    }
+                    else if (industry != null)
+                    {
+                        ShowDetailsIndustry(industry, i,byCountry);
+                    }
+                    else if (keyword == null || industry == null)
+                    {
+                        Show(i);
+                    }
                     Country_Bind();
                     Industry_Bind();
                 }
@@ -361,8 +372,99 @@ namespace MyOwnResearch.Controllers
                 }
             }
         }
+        public ActionResult ShowDetailsIndustry(string industry, int? i,string byCountry)
+        {
+            int pageSize = 8;
+            int pageIndex = 1;
+            pageIndex = i.HasValue ? Convert.ToInt32(i) : 1;
+            IPagedList<EntityAddResearch> ent = null;
+            EntityAddResearch entity = new EntityAddResearch();
+
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            SqlCommand comm = new SqlCommand("SP_GetIndustryGid", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            if (industry == null)
+            {
+                industry = "";
+            }
+            comm.Parameters.AddWithValue("@resId", industry);
+            SqlDataAdapter Ad = new SqlDataAdapter(comm);
+            DataTable dr = new DataTable();
+            Ad.Fill(dr);
+            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
+            if (dr.Rows.Count > 0)
+            {
+                foreach (DataRow tv in dr.Rows)
+                {
+                    lstres.Add(new EntityAddResearch
+                    {
+                        userId = Convert.ToString(tv["userID"]),
+                        shareStatus = Convert.ToInt32(tv["shareStatus"]),
+                        strResId = Convert.ToString(tv["resId"]),
+                        strFirstName = Convert.ToString(tv["firstName"]),
+                        strLastName = Convert.ToString(tv["lastName"]),
+                        strTitleEmail = Convert.ToString(tv["titleEmail"]),
+                        strPersonlkdnURL = Convert.ToString(tv["personlkdnURL"]),
+                        strCompanyAddress = Convert.ToString(tv["companyAddress"]),
+                        strCompanyWebsite = Convert.ToString(tv["companyWebsite"]),
+                        strCorporatePn = Convert.ToString(tv["corporatePhone"]),
+                        strEmployee = Convert.ToString(tv["employee"]),
+                        strIndustry = Convert.ToString(tv["industry"]),
+                        strCompanyURL = Convert.ToString(tv["companyURL"]),
+                        strPrivateNote = Convert.ToString(tv["privateNote"]),
+                        showDate = Convert.ToDateTime(tv["createdDate"])
+                    });
+                }
+            }
+            ViewBag.id = lstres[0].userId;
+            ent = lstres.ToPagedList(pageIndex, pageSize);
+            return View(ent);
+        }
+        public ActionResult Show(int? i)
+        {
+
+            int pageSize = 8;
+            int pageIndex = 1;
+            pageIndex = i.HasValue ? Convert.ToInt32(i) : 1;
+            IPagedList<EntityAddResearch> ent = null;
+            EntityAddResearch entity = new EntityAddResearch();
+
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            SqlCommand comm = new SqlCommand("SP_GetGrid", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter Ad = new SqlDataAdapter(comm);
+            DataTable dr = new DataTable();
+            Ad.Fill(dr);
+            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
+            if (dr.Rows.Count > 0)
+            {
+                foreach (DataRow tv in dr.Rows)
+                {
+                    lstres.Add(new EntityAddResearch
+                    {
+                        userId = Convert.ToString(tv["userID"]),
+                        shareStatus = Convert.ToInt32(tv["shareStatus"]),
+                        strResId = Convert.ToString(tv["resId"]),
+                        strFirstName = Convert.ToString(tv["firstName"]),
+                        strLastName = Convert.ToString(tv["lastName"]),
+                        strTitleEmail = Convert.ToString(tv["titleEmail"]),
+                        strPersonlkdnURL = Convert.ToString(tv["personlkdnURL"]),
+                        strCompanyAddress = Convert.ToString(tv["companyAddress"]),
+                        strCompanyWebsite = Convert.ToString(tv["companyWebsite"]),
+                        strCorporatePn = Convert.ToString(tv["corporatePhone"]),
+                        strEmployee = Convert.ToString(tv["employee"]),
+                        strIndustry = Convert.ToString(tv["industry"]),
+                        strCompanyURL = Convert.ToString(tv["companyURL"]),
+                        strPrivateNote = Convert.ToString(tv["privateNote"]),
+                        showDate = Convert.ToDateTime(tv["createdDate"])
+                    });
+                }
+            }
+            ViewBag.id = lstres[0].userId;
+            ent = lstres.ToPagedList(pageIndex, pageSize);
+            return View(ent);
+        }
         public ActionResult ShowDetails(string keyword, int? i)
-        
         {
             int pageSize = 8;
             int pageIndex = 1;

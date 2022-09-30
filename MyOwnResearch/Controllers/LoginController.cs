@@ -111,13 +111,17 @@ namespace LoginControllers
                     {
                         return RedirectToAction("dashboard", "dashboard", new { Name = Session["name"].ToString(), userId = Session["userId"], userName = Session["userName"] });
                     }
-                    else
-                    {
-                        TempData["AlertMessages"] = "Please Enter Correct Username and Password";
-                        return RedirectToAction("login");
-                    }
+                    
                 }
-                
+                else
+                {
+                    TempData["AlertMessages"] = "Please Enter Correct Username and Password";
+                    return RedirectToAction("login");
+                }
+                if (login.strEmail=="" && login.strPassword=="")
+                {
+                    return RedirectToAction("login");
+                }
             }
             catch(Exception ex)
             {

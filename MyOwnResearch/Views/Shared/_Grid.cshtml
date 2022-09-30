@@ -7,20 +7,16 @@
                 <img src="~/images/assets/images/profile_icon.jpg" height="40" alt="img">
                 <div class="content">
                     <small><b>Research No: @Html.DisplayFor(a => a.strResId) </b></small>
-                    
                 </div>
-                <br />
                 <small><b>Shared By: @Html.DisplayFor(a => a.strFirstName)</b></small>
                 <br />
-                <small><b>Date: @Html.DisplayFor(a => a.showDate)</b> </small>
-
-
-                <h6>Excepteur sint occaecat. </h6>
+                <small><b>Date: @Html.DisplayFor(a => a.showDate)</b> </small><br />
+                <small><b>Phone: @Html.DisplayFor(a => a.strCorporatePn)</b> </small>
                 <small class="card-text">
                     @Html.DisplayFor(a => a.strPrivateNote)
                 </small>
                 <br>
-                <small>Category: @Html.DisplayFor(a => a.strIndustry)</small>
+                <b><small>Industry: @Html.DisplayFor(a => a.strIndustry)</small></b>
                 <div class="content ">
                     <div>
                         <a href="/dashboard/viewRecords/@Model.strResId">
@@ -45,7 +41,7 @@
                             <img src="~/images/assets/images/SharedBy.png" alt="Shared" width="25" height="25" />
                         }
                     </div>
-                    
+
                     <div>
                         <a class="nav-link" data-bs-toggle="modal" data-bs-target=@("#file_modal" + Model.strResId)>
                             @*<a href="/dashboard/updateFile/@Model.strResId">*@
@@ -87,7 +83,7 @@
                                         <h6>File Update</h6>
                                         <div class="btn-end">
                                             <input type="file" id=@("fileUpdates" + Model.strResId) class="form-control">
-                                            <a onclick="btnFileUpdate(@Model.strResId)" class="btn btn-priam active">
+                                            <a onclick="btnFileUpdate(@Model.strResId)" id="btnFileUpdate" class="btn btn-priam active">
                                                 Update
                                             </a>
                                         </div>

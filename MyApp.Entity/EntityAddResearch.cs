@@ -16,16 +16,25 @@ namespace MyApp.Entity
         public int shareStatus { get; set; }
         public string strResId { get; set; }
         [DisplayName("Shared By:")]
+        [Required(ErrorMessage = "Please Enter Email")]
         public string strFirstName { get; set; }
+        [Required(ErrorMessage = "Please Enter Email")]
         public string strLastName { get; set; }
+        [Required(ErrorMessage = "Please Enter Email")]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Please enter valid Email")]
         public string strTitleEmail { get; set; }
         public string strPersonlkdnURL { get; set; }
         public string strCompanyWebsite { get; set; }
+        [Required(ErrorMessage = "Please Enter Email")]
         public string strCorporatePn { get; set; }
         public string strEmployee { get; set; }
+        [Required(ErrorMessage = "Please Enter Email")]
         public string strIndustry { get; set; }
+        [Required(ErrorMessage = "Please Enter Email")]
         public int intCountryId { get; set; }
+        [Required(ErrorMessage = "Please Enter Email")]
         public int intStateId { get; set; }
+        [Required(ErrorMessage = "Please Enter Email")]
         public int intCityId { get; set; }
         public string strCountryName { get; set; }
         public string strStateName { get; set; }

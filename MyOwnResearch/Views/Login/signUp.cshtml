@@ -16,6 +16,12 @@
 
 
 <body class="login_page">
+    <style>
+        .required:after {
+            content: " *";
+            color: red;
+        }
+    </style>
     <div class="row">
         <!--Left Section-->
         <div class="col-lg-7 col-md-12 login_bg">
@@ -51,7 +57,7 @@
                                         </a>
                                     </div>
                                     <div class="m-4">
-                                        <h6>FORGOT PASSWORD</h6>
+                                        <h6 class="required">FORGOT PASSWORD</h6>
                                         <input type="email" class="form-control" placeholder="Enter Email">
                                         <div class="btn-end">
                                             <button type="submit" class="btn btn-priam active">Confirm</button>
@@ -70,17 +76,17 @@
                         </div>
                     }
                     <div>
-                        <label for="username" class="form-label">Name</label>
+                        <label for="username" class="form-label required">Name</label>
                         <input type="text" name="name" class="form-control" placeholder="Enter Name" value="">
                         @Html.ValidationMessageFor(entitySignup => entitySignup.name, "", new { @class = "text-danger" })
                     </div>
                     <div>
-                        <label for="Email" class="form-label">Email</label>
+                        <label for="Email" class="form-label required">Email</label>
                         <input type="text" name="email" class="form-control" placeholder="Enter Email" value="">
                         @Html.ValidationMessageFor(signUpModel => signUpModel.email, "", new { @class = "text-danger" })
                     </div>
                     <div>
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label required">Password</label>
                         <div class="input-group password_section ">
                             <input type="password" name="password" class="form-control" placeholder="Enter Password" value="">
                             <div class="input-group-append">
@@ -90,7 +96,7 @@
                         @Html.ValidationMessageFor(signUpModel => signUpModel.password, "", new { @class = "text-danger" })
                     </div>
                     <div>
-                        <label for="cpassword" class="form-label">Confirm Password</label>
+                        <label for="cpassword" class="form-label required">Confirm Password</label>
                         <div class="input-group password_section">
                             <input type="password" name="cPassword" class="form-control" placeholder="Enter Confirm Password" value="">
                             <div class="input-group-append">
