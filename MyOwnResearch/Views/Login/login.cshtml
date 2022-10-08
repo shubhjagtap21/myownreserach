@@ -113,39 +113,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="~/script/jquery-1.7.1.min.js"></script>
     <script>
-        $('#btnLogin').click(function () {
-            var email = $('#email').val();
-            var password = $('#password').val();
+        //$('#btnLogin').click(function () {
+        //    var email = $('#email').val();
+        //    var password = $('#password').val();
 
-            if (email == "") {
-                swal({
-                    title: "Email Empty !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (password == "") {
-                swal({
-                    title: "Email Empty !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else {
-                swal({
-                    title: "Succesfully",
-                    text: "Succesfully Login!",
-                    icon: "success",
-                    button: "OK",
-                });
-            }
-            $(function () {
-                $("#btnClosePopup").click(function () {
-                    $("#forgot_password").modal("hide")
-                });
-            });
+        //    if (email == "") {
+        //        swal({
+        //            title: "Email Empty !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (password == "") {
+        //        swal({
+        //            title: "Email Empty !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else {
+        //        swal({
+        //            title: "Succesfully",
+        //            text: "Succesfully Login!",
+        //            icon: "success",
+        //            button: "OK",
+        //        });
+        //    }
+        //    $(function () {
+        //        $("#btnClosePopup").click(function () {
+        //            $("#forgot_password").modal("hide")
+        //        });
+        //    });
+        //}
+
             function btnForgot() {
                 var forEmail = $('#forEmail').val();
                 $.ajax({

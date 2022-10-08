@@ -51,7 +51,6 @@ namespace MyOwnResearch.Controllers
         }
         public JsonResult updateProfile(int userId, string firstName,string lastName,string email,string gender,string phoneNumber,string address)
         {
-            string mes = null;
             try
             {
                 EntitySignUp entity = new EntitySignUp
@@ -67,11 +66,11 @@ namespace MyOwnResearch.Controllers
                 int result = dt.updateProfile(entity);
                 if (result > 0)
                 {
-                    mes = "Data Updated succesful";
+                    TempData["ProfileMessage"] = "Update Sucessful...!!!";
                 }
                 else
                 {
-                    Console.WriteLine("something wrong");
+                    TempData["ProfileMessage"] = "Something Went Wrong...!!!";
                 }
                 //dashboard(Keyword);
             }
@@ -79,7 +78,7 @@ namespace MyOwnResearch.Controllers
             {
                 Console.WriteLine(ex.Message);
             }
-            return Json(new { print = mes });
+            return Json(new { result = "Redirect", url = Url.Action("dashboard", "dashboard") });
         }
         public void Gender_Bind()
         {

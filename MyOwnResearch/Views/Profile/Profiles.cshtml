@@ -52,7 +52,7 @@
                         <div class="flex-g">
                             <div class="col-6">
                                 <label for="phone">Phone Number</label>
-                                @Html.TextBoxFor(a => a.strPhoneNumber, new { @class = "form-control", placeholder = "Enter Phone Number", id = "phoneNumber"})
+                                @Html.TextBoxFor(a => a.strPhoneNumber, new { @class = "form-control", placeholder = "Enter Phone Number", id = "phoneNumber", maxlength = "10" })
                                 @*<input type="text" class="form-control" maxlength="10" name="phone" id="corporatePhone" placeholder="Enter Phone Number">*@
                             </div>
                             <div class="col-6">
@@ -63,6 +63,7 @@
                         </div>
                         <div class="btn-end">
                             @*<a href="/Profile/updateProfile/@Model.userId" class="btn btn-priam active col-3">Update</a>*@
+                            <a href="/dashboard/dashboard" class="btn btn-success active col-3">Back</a>
                             <a onclick="btnUpdate(@Model.userId)" class="btn btn-priam active col-3">Update</a>
                             @*<button type="submit" onclick="btnUpdate(@Model.userId)" class="btn btn-priam active col-3">Update</button>*@
                         </div>
@@ -92,6 +93,10 @@
                 data: { 'userId': userId, 'firstName': firstName, 'lastName': lastName, 'email': email, 'gender': gender, 'phoneNumber': phoneNumber, 'address': address },
                 type: "POST",
                 success: function (data) {
+
+                    if (data.result == 'Redirect') {
+                        window.location = data.url;
+                    }
                 },
                 error: function (err) {
                     console.log(err);

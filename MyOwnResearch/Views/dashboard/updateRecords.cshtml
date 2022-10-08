@@ -202,6 +202,8 @@
                             </div>
                         </div>
                         <div class="btn-end">
+                            @*<a href="/dashboard/dashboard" class="btn btn-success active col-3">Back</a>*@
+                            @*<button type="button" class="btn btn-success active col-3">Back</button>*@
                             <button type="button" onclick="btnUpdateResearch(@(Model.strResId))" class="btn btn-priam active col-3">Update</button>
                         </div>
                     </div>
@@ -215,25 +217,6 @@
 
 
     <script>
-        //function btnUpdateResearch(strResId) {
-        //    debugger;
-        //    var firstName = $('#firstName').val();
-        //    var lastName = $('#lastName').val();
-        //    $.ajax({
-        //        url: "/dashboard/updateReserach1",
-        //        dataType: 'JSON',
-        //        data: { 'resId': strResId },
-        //        type: "POST",
-        //        success: function (data) {
-        //            debugger;
-        //            alert(data.print);
-        //        },
-        //        error: function (err) {
-        //            console.log(err);
-        //        }
-        //    });
-
-        //}
         function btnUpdateResearch(strResId) {
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
@@ -249,24 +232,27 @@
             var companyURL = $('#companyURL').val();
             var companyAdd = $('#companyAdd').val();
             var privateNotes = $('#privateNotes').val();
-            debugger;
 
-            $.ajax({
-                url: "/dashboard/updateReserach1",
-                dataType: 'JSON',
-                data: {
-                    'resId': strResId, 'firstName': firstName, 'lastName': lastName, 'strTitleEmail': titleEmail, 'strPersonlkdnURL': personslkdnURL, 'strCompanyWebsite': companyWebsite,
-                    'strCorporatePn': corporatePhone, 'strEmployee': employees, 'strIndustry': industry, 'intCountryId': countryId, 'intStateId': stateId, 'intCityId': cityId,
-                    'strCompanyURL': companyURL, 'strCompanyAddress': companyAdd, 'strPrivateNote': privateNotes
-                },
-                type: "POST",
-                success: function (data) {
-                    debugger;
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
+                $.ajax({
+                            url: "/dashboard/updateReserach1",
+                            dataType: 'JSON',
+                            data: {
+                                'resId': strResId, 'firstName': firstName, 'lastName': lastName, 'strTitleEmail': titleEmail, 'strPersonlkdnURL': personslkdnURL, 'strCompanyWebsite': companyWebsite,
+                                'strCorporatePn': corporatePhone, 'strEmployee': employees, 'strIndustry': industry, 'intCountryId': countryId, 'intStateId': stateId, 'intCityId': cityId,
+                                'strCompanyURL': companyURL, 'strCompanyAddress': companyAdd, 'strPrivateNote': privateNotes
+                            },
+                            type: "POST",
+                    success: function (data) {
+
+                        if (data.result == 'Redirect')
+                        {
+                            window.location = data.url;
+                        }
+                            },
+                            error: function (err) {
+                                console.log(err);
+                            }
+                });
         }
 
         $(document).ready(function () {

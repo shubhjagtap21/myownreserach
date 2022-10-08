@@ -143,15 +143,6 @@ namespace MyOwnResearch.Controllers
             string mes = null;
             try
             {
-                //for (int i = 0; i < Request.Files.Count; i++)
-                //{
-                //    var file = Request.Files[i];
-
-                //    var fileName = Path.GetFileName(file.FileName);
-
-                //    path = Path.Combine(Server.MapPath("~/UploadedFiles/"), fileName);
-                //    file.SaveAs(path);
-                //}
                 EntityAddResearch entity = new EntityAddResearch
                 {
                     strResId = resId,
@@ -173,11 +164,11 @@ namespace MyOwnResearch.Controllers
                 int result = dt.updateRecords(entity);
                 if (result > 0)
                 {
-                    mes = "Data inserted succesful";
+                    TempData["UpdateMessage"] = "Update Sucessful...!!!";
                 }
                 else
                 {
-                    Console.WriteLine("something wrong");
+                    TempData["UpdateMessage"] = "Something Went Wrong...!!!";
                 }
                 //dashboard(Keyword);
             }
@@ -185,8 +176,7 @@ namespace MyOwnResearch.Controllers
             {
                 Console.WriteLine(ex.Message);
             }
-            RedirectToAction("dashboard", "dashboard");
-            return Json(new { print = mes });
+            return Json(new { result = "Redirect", url = Url.Action("dashboard", "dashboard") });
         }
         [HttpPost]
 
@@ -305,6 +295,7 @@ namespace MyOwnResearch.Controllers
                     entity.strCityName = Convert.ToString(tv["CityName"]);
                     entity.strCompanyURL = Convert.ToString(tv["companyURL"]);
                     entity.strPrivateNote = Convert.ToString(tv["privateNote"]);
+                    entity.fileUpload = Convert.ToString(tv["fileUpload"]);
                     entity.showDate = Convert.ToDateTime(tv["createdDate"].ToString());
                     Session["stateId"] = "";
                     Session["cityId"] = "";
@@ -320,8 +311,50 @@ namespace MyOwnResearch.Controllers
 
             return entity;
         }
+        public void researchCount()
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            //get all country
+            string userName = Session["userName"].ToString();
+            SqlCommand comm = new SqlCommand("SP_GetCountResearch", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@userName", userName);
+            SqlDataAdapter ad = new SqlDataAdapter(comm);
+            DataTable ds = new DataTable();
+            ad.Fill(ds);
+            if (ds.Rows.Count > 0)
+            {
+                foreach (DataRow tv in ds.Rows)
+                {
+                    EntityAddResearch entity = new EntityAddResearch();
+                    entity.resCount = Convert.ToInt32(tv["NoOfResearch"]);
+                    Session["resCount"] = entity.resCount;
+                }
+            }
+        }
+        public void shareCount()
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            //get all country
+            string userName = Session["userName"].ToString();
+            SqlCommand comm = new SqlCommand("SP_GetCountShare", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@userName", userName);
+            SqlDataAdapter ad = new SqlDataAdapter(comm);
+            DataTable ds = new DataTable();
+            ad.Fill(ds);
+            if (ds.Rows.Count > 0)
+            {
+                foreach (DataRow tv in ds.Rows)
+                {
+                    EntityAddResearch entity = new EntityAddResearch();
+                    entity.shareCount = Convert.ToInt32(tv["NoOfShare"]);
+                    Session["shareCount"] = entity.shareCount;
+                }
+            }
+        }
         [HttpGet]
-        public ActionResult dashboard(string keyword, int? i, string industry,string byCountry)
+        public ActionResult dashboard(string keyword, int? i, string industry,string CountryName,EntityAddResearch entitys)
         {
             try
             {
@@ -334,14 +367,20 @@ namespace MyOwnResearch.Controllers
                     if (keyword != null)
                     {
                         ShowDetails(keyword, i);
+                        researchCount();
+                        shareCount();
                     }
                     else if (industry != null)
                     {
-                        ShowDetailsIndustry(industry, i,byCountry);
+                        ShowDetailsIndustry(industry, i, CountryName);
+                        researchCount();
+                        shareCount();
                     }
                     else if (keyword == null || industry == null)
                     {
                         Show(i);
+                        researchCount();
+                        shareCount();
                     }
                     Country_Bind();
                     Industry_Bind();
@@ -372,14 +411,15 @@ namespace MyOwnResearch.Controllers
                 }
             }
         }
-        public ActionResult ShowDetailsIndustry(string industry, int? i,string byCountry)
+        public ActionResult ShowDetailsIndustry(string industry, int? i,string CountryName)
         {
             int pageSize = 8;
             int pageIndex = 1;
             pageIndex = i.HasValue ? Convert.ToInt32(i) : 1;
-            IPagedList<EntityAddResearch> ent = null;
+            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
+            IPagedList<EntityAddResearch> ent = lstres.ToPagedList(pageIndex, pageSize);
             EntityAddResearch entity = new EntityAddResearch();
-
+            string userName = Session["userName"].ToString();
             SqlConnection conn = new SqlConnection(ConnectionStrings);
             SqlCommand comm = new SqlCommand("SP_GetIndustryGid", conn);
             comm.CommandType = CommandType.StoredProcedure;
@@ -388,10 +428,11 @@ namespace MyOwnResearch.Controllers
                 industry = "";
             }
             comm.Parameters.AddWithValue("@resId", industry);
+            comm.Parameters.AddWithValue("@userName", userName);
             SqlDataAdapter Ad = new SqlDataAdapter(comm);
             DataTable dr = new DataTable();
             Ad.Fill(dr);
-            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
+           
             if (dr.Rows.Count > 0)
             {
                 foreach (DataRow tv in dr.Rows)
@@ -415,27 +456,32 @@ namespace MyOwnResearch.Controllers
                         showDate = Convert.ToDateTime(tv["createdDate"])
                     });
                 }
+                ViewBag.id = lstres[0].userId;
+                ent = lstres.ToPagedList(pageIndex, pageSize);
             }
-            ViewBag.id = lstres[0].userId;
-            ent = lstres.ToPagedList(pageIndex, pageSize);
+            else
+            {
+                Console.WriteLine("No data..!");
+            }
             return View(ent);
         }
         public ActionResult Show(int? i)
         {
-
             int pageSize = 8;
             int pageIndex = 1;
             pageIndex = i.HasValue ? Convert.ToInt32(i) : 1;
-            IPagedList<EntityAddResearch> ent = null;
+            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
+            IPagedList<EntityAddResearch> ent = lstres.ToPagedList(pageIndex, pageSize);
             EntityAddResearch entity = new EntityAddResearch();
-
+            string userName = Session["userName"].ToString();
             SqlConnection conn = new SqlConnection(ConnectionStrings);
             SqlCommand comm = new SqlCommand("SP_GetGrid", conn);
             comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@userName", userName);
             SqlDataAdapter Ad = new SqlDataAdapter(comm);
             DataTable dr = new DataTable();
             Ad.Fill(dr);
-            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
+            
             if (dr.Rows.Count > 0)
             {
                 foreach (DataRow tv in dr.Rows)
@@ -459,9 +505,13 @@ namespace MyOwnResearch.Controllers
                         showDate = Convert.ToDateTime(tv["createdDate"])
                     });
                 }
+                ViewBag.id = lstres[0].userId;
+                ent = lstres.ToPagedList(pageIndex, pageSize);
             }
-            ViewBag.id = lstres[0].userId;
-            ent = lstres.ToPagedList(pageIndex, pageSize);
+            else
+            {
+                Console.WriteLine("No data..!");
+            }
             return View(ent);
         }
         public ActionResult ShowDetails(string keyword, int? i)
@@ -469,12 +519,14 @@ namespace MyOwnResearch.Controllers
             int pageSize = 8;
             int pageIndex = 1;
             pageIndex = i.HasValue ? Convert.ToInt32(i) : 1;
-            IPagedList<EntityAddResearch> ent = null;
+            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
+            IPagedList<EntityAddResearch> ent = lstres.ToPagedList(pageIndex, pageSize);
             EntityAddResearch entity = new EntityAddResearch();
-            
+            string userName = Session["userName"].ToString();
             SqlConnection conn = new SqlConnection(ConnectionStrings);
             SqlCommand comm = new SqlCommand("SP_ShowReseach", conn);
             comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@userName", userName);
             if (keyword == null)
             {
                 keyword = "";
@@ -483,7 +535,6 @@ namespace MyOwnResearch.Controllers
             SqlDataAdapter Ad = new SqlDataAdapter(comm);
             DataTable dr = new DataTable();
             Ad.Fill(dr);
-            List<EntityAddResearch> lstres = new List<EntityAddResearch>();
             if (dr.Rows.Count > 0)
             {
                 foreach (DataRow tv in dr.Rows)
@@ -507,9 +558,14 @@ namespace MyOwnResearch.Controllers
                         showDate = Convert.ToDateTime(tv["createdDate"])
                     });
                 }
+                ViewBag.id = lstres[0].userId;
+                ent = lstres.ToPagedList(pageIndex, pageSize);
             }
-            ViewBag.id= lstres[0].userId;
-            ent = lstres.ToPagedList(pageIndex, pageSize);
+            else
+            {
+                Console.WriteLine("No data..!");
+            }
+            
             return View(ent);
             //return View(lstres.ToList().ToPagedList(i ?? 1,8));
         }
@@ -598,14 +654,35 @@ namespace MyOwnResearch.Controllers
         }
         public void Industry_Bind()
         {
-            DataSet ds = dt.Get_Industry();
+            DataTable ds = Get_Industry();
             List<SelectListItem> industryList = new List<SelectListItem>();
-
-            foreach (DataRow dr in ds.Tables[0].Rows)
+                EntityAddResearch entity = new EntityAddResearch();
+            if (ds.Rows.Count > 0)
             {
-                industryList.Add(new SelectListItem { Text = dr["industry"].ToString(), Value = dr["resId"].ToString() });
+                foreach (DataRow dr in ds.Rows)
+                {
+                    industryList.Add(new SelectListItem { Text = dr["industry"].ToString(), Value = dr["resId"].ToString() });
+                    ViewBag.industrys = industryList;
+                }
             }
-            ViewBag.industrys = industryList;
+            else
+            {
+                    industryList.Add(new SelectListItem { Text = ""});
+                    ViewBag.industrys = industryList;
+            }
+        }
+        public DataTable Get_Industry()
+        {
+            SqlConnection conn = new SqlConnection(ConnectionStrings);
+            //get all country
+            string userName = Session["userName"].ToString();
+            SqlCommand comm = new SqlCommand("SP_BindIndustry", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@userName", userName);
+            SqlDataAdapter ad = new SqlDataAdapter(comm);
+            DataTable ds = new DataTable();
+            ad.Fill(ds);
+            return ds;
         }
         public JsonResult Country(string resId)
         {

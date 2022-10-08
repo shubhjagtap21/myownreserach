@@ -277,16 +277,7 @@ namespace MyOwnResearch
             ad.Fill(ds);
             return ds;
         }
-        public DataSet Get_Industry()
-        {
-            SqlConnection conn = new SqlConnection(ConnectionStrings);
-            //get all country
-            SqlCommand comm = new SqlCommand("SP_BindIndustry", conn);
-            SqlDataAdapter ad = new SqlDataAdapter(comm);
-            DataSet ds = new DataSet();
-            ad.Fill(ds);
-            return ds;
-        }
+        
         public int updateProfile(EntitySignUp entity)
         {
             SqlConnection conn = new SqlConnection(ConnectionStrings);

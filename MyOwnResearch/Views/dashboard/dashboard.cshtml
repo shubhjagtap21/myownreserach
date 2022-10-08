@@ -20,6 +20,9 @@
 
 <body class="bg-prim">
     <style>
+        .count{
+            background-color:antiquewhite;
+        }
         .required:after {
             content: " *";
             color: red;
@@ -236,6 +239,18 @@
                                     </svg> Dashboard
                                 </span>
                             </div>
+                            @if (TempData["UpdateMessage"] != null)
+                            {
+                                <div class="alert alert-success">
+                                    <strong>@TempData["UpdateMessage"]</strong>
+                                </div>
+                            }
+                            @if (TempData["ProfileMessage"] != null)
+                            {
+                                <div class="alert alert-success">
+                                    <strong>@TempData["ProfileMessage"]</strong>
+                                </div>
+                            }
                             <div class="ms-4">
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
@@ -361,7 +376,7 @@
 
                                     <span style="color:darkblue;font-size:14px;">@Session["name"]</span><i class="middle fa fa-angle-down"></i>
                                     <div class="dropdown-content">
-                                        <a href="~/Profile/Profiles/@ViewBag.id">Profile</a>
+                                        <a href="~/Profile/Profiles/@Session["userId"]">Profile</a>
                                         <a href="#">Setting</a>
                                         <a href="~/Login/Login">Logout</a>
                                     </div>
@@ -392,7 +407,7 @@
                                         <label class="col-form-label">Country</label>
                                     </div>
                                     <div class="col-8">
-                                        <select id="byCountry" class="form-control">-Select Country-</select>
+                                        <select id="CountryName" name="CountryName" class="form-control">-Select Country-</select>
                                     </div>
                                 </div>
                             </div>
@@ -411,26 +426,50 @@
                             </div>
                         </div>
                     }
-                        <!--main section-->
-                        @using (Html.BeginForm())
-                        {
-                            <table class="table" id="tblResearch">
-                                <section class="row dashboard_card_grid">
-                                    @foreach (var item in Model)
-                                    {
-                                        @Html.Partial("_Grid", item)
-                                    }
-                                </section>
-                            </table>
-                            @*@Html.PagedListPager(Model,i=> Url.Action("ShowDetails","dashboard", new {i}))*@
-                        }
-                        <div class="pagination" style="margin-left: 400px">
-                            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount <br /><br />
-                            @Html.PagedListPager(Model, i => Url.Action("dashboard", "dashboard", new { i }))
+                    <!--Counts-->
+                <div class="row top_nav">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="d-flex flex-row  align-items-center justify-content-around">
+                            <div class="col-7">
+                                <label class="col-form-label">Research Count</label>
+                            </div>
+                            <div class="col-3">
+                                <input type="text" value="@Session["resCount"]" style="text-align:center" id="researchCount" class="form-control" disabled />
+                            </div>
                         </div>
-</div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="filter">
+                            <div class="col-6">
+                                <label class="col-form-label">Share Count</label>
+                            </div>
+                            <div class="col-3">
+                                <input type="text" value="@Session["shareCount"]" style="text-align:center" id="shareCount" class="form-control" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <!--main section-->
+                                @using (Html.BeginForm())
+                                {
+                                    <section class="row dashboard_card_grid">
+                                        <table class="table" id="tblResearch">
 
-        </div>
+                                            @foreach (var item in Model)
+                                            {
+                                                @Html.Partial("_Grid", item)
+                                            }
+
+                                        </table>
+                                    </section>
+                                    @*@Html.PagedListPager(Model,i=> Url.Action("ShowDetails","dashboard", new {i}))*@
+                                }
+                                <div class="pagination" style="margin-left: 400px">
+                                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount <br /><br />
+                                    @Html.PagedListPager(Model, i => Url.Action("dashboard", "dashboard", new { i }))
+                                </div>
+                            </div>
+                        </div>
         <!-- /#page-content-wrapper -->
     </div>
     <!-- modals -->
@@ -1010,100 +1049,100 @@
     <script src="~/Content/js/custom.js"></script>
     <script src="~/script/jquery-1.7.1.min.js"></script>
     <script>
-        $('#btnSave').click(function () {
-            var firstName = $('#firstName').val();
-            var lastName = $('#lastName').val();
-            var titleEmail = $('#titleEmail').val();
-            var corPhone = $('#corporatePhone').val();
-            var industry = $('#industrys').val();
-            var country = $('#Country').val();
-            var state = $('#State').val();
-            var city = $('#Citys').val();
+        ////$('#btnSave').click(function () {
+        ////    var firstName = $('#firstName').val();
+        ////    var lastName = $('#lastName').val();
+        ////    var titleEmail = $('#titleEmail').val();
+        //    var corPhone = $('#corporatePhone').val();
+        //    var industry = $('#industrys').val();
+        //    var country = $('#Country').val();
+        //    var state = $('#State').val();
+        //    var city = $('#Citys').val();
 
-            //if (firstName == "" || lastName == "" || titleEmail == "" || corPhone == "" || industry == "" || country == "" || state == "" || city == "") {
-            //    swal({
-            //        title: "fields Empty !",
-            //        text: "Please Check Missing Fields!",
-            //        icon: "warning",
-            //        button: "OK",
-            //    });
-            //}
-            if (firstName == "") {
-                swal({
-                    title: "First Name Empty !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (lastName == "" ) {
-                swal({
-                    title: "Last Name Empty !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (titleEmail == "" ){
-                swal({
-                    title: "Email Empty !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (corPhone == "") {
-                swal({
-                    title: "Phone Number Empty !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (industry == "") {
-                swal({
-                    title: "Phone Number Empty !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (country == "") {
-                swal({
-                    title: "Choose Country !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (state == "") {
-                swal({
-                    title: "Choose State !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
-            else if (city == "") {
-                swal({
-                    title: "Choose City !",
-                    text: "Please Check Missing Fields!",
-                    icon: "warning",
-                    button: "OK",
-                });
-            }
+        //    //if (firstName == "" && lastName == "" && titleEmail == "" && corPhone == "" && industry == "" && country == "" && state == "" && city == "") {
+        //    //    swal({
+        //    //        title: "fields Empty !",
+        //    //        text: "Please Check Missing Fields!",
+        //    //        icon: "warning",
+        //    //        button: "OK",
+        //    //    });
+        //    //}
+        //    if (firstName == "") {
+        //        swal({
+        //            title: "First Name Empty !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (lastName == "" ) {
+        //        swal({
+        //            title: "Last Name Empty !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (titleEmail == "" ){
+        //        swal({
+        //            title: "Email Empty !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (corPhone == "") {
+        //        swal({
+        //            title: "Phone Number Empty !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (industry == "") {
+        //        swal({
+        //            title: "Phone Number Empty !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (country == "") {
+        //        swal({
+        //            title: "Choose Country !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (state == "") {
+        //        swal({
+        //            title: "Choose State !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
+        //    else if (city == "") {
+        //        swal({
+        //            title: "Choose City !",
+        //            text: "Please Check Missing Fields!",
+        //            icon: "warning",
+        //            button: "OK",
+        //        });
+        //    }
             
-            else {
-                swal({
-                    title: "Succesfully",
-                    text: "You Submit the Records!",
-                    icon: "success",
-                    button: "OK",
-                });
-                $("#add_details").modal("hide")
-            }
+        //    else {
+        //        swal({
+        //            title: "Succesfully",
+        //            text: "You Submit the Records!",
+        //            icon: "success",
+        //            button: "OK",
+        //        });
+        //        $("#add_details").modal("hide")
+        //    }
 
-        });
+        //});
         $(function () {
             $("#btnSaveInvite").click(function () {
                 $("#invite_add").modal("hide")
@@ -1309,6 +1348,7 @@
                     success: function (data) {
                         alert(data.print);
                         clear();
+                        location.reload();
                     },
                     error: function (err) {
                         console.log(err);
@@ -1358,20 +1398,96 @@
             fileData.append("strCompanyURL", companyURL);
             fileData.append("strPrivateNote", privateNotess);
 
-            $.ajax({
-                url: "/dashboard/addReserach",
-                dataType: 'JSON',
-                contentType: false,
-                processData: false,
-                data: fileData,
-                method: "POST",
-                success: function (data) {
-                    clear();
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
+            if (firstName == "") {
+                swal({
+                    title: "First Name Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (lastName == "") {
+                swal({
+                    title: "Last Name Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (titleEmail == "") {
+                swal({
+                    title: "Email Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (corporatePhone == "") {
+                swal({
+                    title: "Phone Number Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (industry == "") {
+                swal({
+                    title: "Phone Number Empty !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (CountryId == "") {
+                swal({
+                    title: "Choose Country !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (StateId == "") {
+                swal({
+                    title: "Choose State !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else if (CityId == "") {
+                swal({
+                    title: "Choose City !",
+                    text: "Please Check Missing Fields!",
+                    icon: "warning",
+                    button: "OK",
+                });
+            }
+            else {
+                $.ajax({
+                    url: "/dashboard/addReserach",
+                    dataType: 'JSON',
+                    contentType: false,
+                    processData: false,
+                    data: fileData,
+                    method: "POST",
+                    success: function (data) {
+                        swal({
+                            title: "Succesfully",
+                            text: "You Submit the Records!",
+                            icon: "success",
+                            button: "OK",
+                        });
+                        $("#add_details").modal("hide")
+                        clear();
+                        location.reload();
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+                
+            }
+            
         }
         function btnUpdateResearch() {
             var firstName = $('#firstName').val();
@@ -1417,7 +1533,8 @@
                 data: fileData,
                 method: "POST",
                 success: function (data) {
-                    alert(data.print);
+                    /*alert(data.print);*/
+                    window.location.href= data.redirect;
                 },
                 error: function (err) {
                     console.log(err);
@@ -1469,6 +1586,7 @@
                             data: { 'strresid': researchId },
                             type: "POST",
                             success: function (data) {
+                                location.reload();
                             },
                             error: function (err) {
                                 console.log(err);
@@ -1507,13 +1625,13 @@
             });
             $('#industry').change(function () {
                 var id = $(this).val();
-                $('#byCountry').empty();
+                $('#CountryName').empty();
                 $.get("Country", { resId: id }, function (data) {
                     var v = "<option>-Select Country-</option>";
                     $.each(data, function (i, v1) {
                         v += "<option value=" + v1.Value + ">" + v1.Text + "</option>";
                     });
-                    $('#byCountry').html(v);
+                    $('#CountryName').html(v);
                 });
             });
         });
